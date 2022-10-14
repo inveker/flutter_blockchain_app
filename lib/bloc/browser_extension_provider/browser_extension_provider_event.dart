@@ -4,7 +4,4 @@ part of 'browser_extension_provider_bloc.dart';
 class BrowserExtensionProviderEvent with _$BrowserExtensionProviderEvent {
   factory BrowserExtensionProviderEvent.connect() = BrowserExtensionProviderConnectEvent;
 
-  factory BrowserExtensionProviderEvent.setIsSupported(bool isSupported) = BrowserExtensionProviderSetIsSupportedEvent;
-
-  factory BrowserExtensionProviderEvent.setIsInstalled(bool isInstalled) = BrowserExtensionProviderSetIsInstalledEvent;
 }

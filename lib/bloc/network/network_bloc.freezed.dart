@@ -20,7 +20,7 @@ mixin _$NetworkEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(ChainModel chain) switchChain,
     required TResult Function() walletConnected,
-    required TResult Function(Future<bool> Function()? switchChainStrategy)
+    required TResult Function(SwitchChainStrategy? switchChainStrategy)
         setSwitchChainStrategy,
     required TResult Function(Future<void> Function()? logoutStrategy)
         setLogoutStrategy,
@@ -31,7 +31,7 @@ mixin _$NetworkEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(ChainModel chain)? switchChain,
     TResult Function()? walletConnected,
-    TResult Function(Future<bool> Function()? switchChainStrategy)?
+    TResult Function(SwitchChainStrategy? switchChainStrategy)?
         setSwitchChainStrategy,
     TResult Function(Future<void> Function()? logoutStrategy)?
         setLogoutStrategy,
@@ -42,7 +42,7 @@ mixin _$NetworkEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ChainModel chain)? switchChain,
     TResult Function()? walletConnected,
-    TResult Function(Future<bool> Function()? switchChainStrategy)?
+    TResult Function(SwitchChainStrategy? switchChainStrategy)?
         setSwitchChainStrategy,
     TResult Function(Future<void> Function()? logoutStrategy)?
         setLogoutStrategy,
@@ -170,7 +170,7 @@ class _$NetworkSwitchChainEvent implements NetworkSwitchChainEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(ChainModel chain) switchChain,
     required TResult Function() walletConnected,
-    required TResult Function(Future<bool> Function()? switchChainStrategy)
+    required TResult Function(SwitchChainStrategy? switchChainStrategy)
         setSwitchChainStrategy,
     required TResult Function(Future<void> Function()? logoutStrategy)
         setLogoutStrategy,
@@ -184,7 +184,7 @@ class _$NetworkSwitchChainEvent implements NetworkSwitchChainEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(ChainModel chain)? switchChain,
     TResult Function()? walletConnected,
-    TResult Function(Future<bool> Function()? switchChainStrategy)?
+    TResult Function(SwitchChainStrategy? switchChainStrategy)?
         setSwitchChainStrategy,
     TResult Function(Future<void> Function()? logoutStrategy)?
         setLogoutStrategy,
@@ -198,7 +198,7 @@ class _$NetworkSwitchChainEvent implements NetworkSwitchChainEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ChainModel chain)? switchChain,
     TResult Function()? walletConnected,
-    TResult Function(Future<bool> Function()? switchChainStrategy)?
+    TResult Function(SwitchChainStrategy? switchChainStrategy)?
         setSwitchChainStrategy,
     TResult Function(Future<void> Function()? logoutStrategy)?
         setLogoutStrategy,
@@ -314,7 +314,7 @@ class _$NetworkWalletConnectedEvent implements NetworkWalletConnectedEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(ChainModel chain) switchChain,
     required TResult Function() walletConnected,
-    required TResult Function(Future<bool> Function()? switchChainStrategy)
+    required TResult Function(SwitchChainStrategy? switchChainStrategy)
         setSwitchChainStrategy,
     required TResult Function(Future<void> Function()? logoutStrategy)
         setLogoutStrategy,
@@ -328,7 +328,7 @@ class _$NetworkWalletConnectedEvent implements NetworkWalletConnectedEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(ChainModel chain)? switchChain,
     TResult Function()? walletConnected,
-    TResult Function(Future<bool> Function()? switchChainStrategy)?
+    TResult Function(SwitchChainStrategy? switchChainStrategy)?
         setSwitchChainStrategy,
     TResult Function(Future<void> Function()? logoutStrategy)?
         setLogoutStrategy,
@@ -342,7 +342,7 @@ class _$NetworkWalletConnectedEvent implements NetworkWalletConnectedEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ChainModel chain)? switchChain,
     TResult Function()? walletConnected,
-    TResult Function(Future<bool> Function()? switchChainStrategy)?
+    TResult Function(SwitchChainStrategy? switchChainStrategy)?
         setSwitchChainStrategy,
     TResult Function(Future<void> Function()? logoutStrategy)?
         setLogoutStrategy,
@@ -411,7 +411,7 @@ abstract class _$$NetworkSetSwitchChainStrategyEventCopyWith<$Res> {
           _$NetworkSetSwitchChainStrategyEvent value,
           $Res Function(_$NetworkSetSwitchChainStrategyEvent) then) =
       __$$NetworkSetSwitchChainStrategyEventCopyWithImpl<$Res>;
-  $Res call({Future<bool> Function()? switchChainStrategy});
+  $Res call({SwitchChainStrategy? switchChainStrategy});
 }
 
 /// @nodoc
@@ -435,7 +435,7 @@ class __$$NetworkSetSwitchChainStrategyEventCopyWithImpl<$Res>
       switchChainStrategy == freezed
           ? _value.switchChainStrategy
           : switchChainStrategy // ignore: cast_nullable_to_non_nullable
-              as Future<bool> Function()?,
+              as SwitchChainStrategy?,
     ));
   }
 }
@@ -447,7 +447,7 @@ class _$NetworkSetSwitchChainStrategyEvent
   _$NetworkSetSwitchChainStrategyEvent(this.switchChainStrategy);
 
   @override
-  final Future<bool> Function()? switchChainStrategy;
+  final SwitchChainStrategy? switchChainStrategy;
 
   @override
   String toString() {
@@ -459,12 +459,13 @@ class _$NetworkSetSwitchChainStrategyEvent
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NetworkSetSwitchChainStrategyEvent &&
-            (identical(other.switchChainStrategy, switchChainStrategy) ||
-                other.switchChainStrategy == switchChainStrategy));
+            const DeepCollectionEquality()
+                .equals(other.switchChainStrategy, switchChainStrategy));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, switchChainStrategy);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(switchChainStrategy));
 
   @JsonKey(ignore: true)
   @override
@@ -478,7 +479,7 @@ class _$NetworkSetSwitchChainStrategyEvent
   TResult when<TResult extends Object?>({
     required TResult Function(ChainModel chain) switchChain,
     required TResult Function() walletConnected,
-    required TResult Function(Future<bool> Function()? switchChainStrategy)
+    required TResult Function(SwitchChainStrategy? switchChainStrategy)
         setSwitchChainStrategy,
     required TResult Function(Future<void> Function()? logoutStrategy)
         setLogoutStrategy,
@@ -492,7 +493,7 @@ class _$NetworkSetSwitchChainStrategyEvent
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(ChainModel chain)? switchChain,
     TResult Function()? walletConnected,
-    TResult Function(Future<bool> Function()? switchChainStrategy)?
+    TResult Function(SwitchChainStrategy? switchChainStrategy)?
         setSwitchChainStrategy,
     TResult Function(Future<void> Function()? logoutStrategy)?
         setLogoutStrategy,
@@ -506,7 +507,7 @@ class _$NetworkSetSwitchChainStrategyEvent
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ChainModel chain)? switchChain,
     TResult Function()? walletConnected,
-    TResult Function(Future<bool> Function()? switchChainStrategy)?
+    TResult Function(SwitchChainStrategy? switchChainStrategy)?
         setSwitchChainStrategy,
     TResult Function(Future<void> Function()? logoutStrategy)?
         setLogoutStrategy,
@@ -567,10 +568,10 @@ class _$NetworkSetSwitchChainStrategyEvent
 
 abstract class NetworkSetSwitchChainStrategyEvent implements NetworkEvent {
   factory NetworkSetSwitchChainStrategyEvent(
-          final Future<bool> Function()? switchChainStrategy) =
+          final SwitchChainStrategy? switchChainStrategy) =
       _$NetworkSetSwitchChainStrategyEvent;
 
-  Future<bool> Function()? get switchChainStrategy;
+  SwitchChainStrategy? get switchChainStrategy;
   @JsonKey(ignore: true)
   _$$NetworkSetSwitchChainStrategyEventCopyWith<
           _$NetworkSetSwitchChainStrategyEvent>
@@ -648,7 +649,7 @@ class _$NetworkSetLogoutStrategyEvent implements NetworkSetLogoutStrategyEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(ChainModel chain) switchChain,
     required TResult Function() walletConnected,
-    required TResult Function(Future<bool> Function()? switchChainStrategy)
+    required TResult Function(SwitchChainStrategy? switchChainStrategy)
         setSwitchChainStrategy,
     required TResult Function(Future<void> Function()? logoutStrategy)
         setLogoutStrategy,
@@ -662,7 +663,7 @@ class _$NetworkSetLogoutStrategyEvent implements NetworkSetLogoutStrategyEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(ChainModel chain)? switchChain,
     TResult Function()? walletConnected,
-    TResult Function(Future<bool> Function()? switchChainStrategy)?
+    TResult Function(SwitchChainStrategy? switchChainStrategy)?
         setSwitchChainStrategy,
     TResult Function(Future<void> Function()? logoutStrategy)?
         setLogoutStrategy,
@@ -676,7 +677,7 @@ class _$NetworkSetLogoutStrategyEvent implements NetworkSetLogoutStrategyEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ChainModel chain)? switchChain,
     TResult Function()? walletConnected,
-    TResult Function(Future<bool> Function()? switchChainStrategy)?
+    TResult Function(SwitchChainStrategy? switchChainStrategy)?
         setSwitchChainStrategy,
     TResult Function(Future<void> Function()? logoutStrategy)?
         setLogoutStrategy,
@@ -789,7 +790,7 @@ class _$NetworkLogoutEvent implements NetworkLogoutEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(ChainModel chain) switchChain,
     required TResult Function() walletConnected,
-    required TResult Function(Future<bool> Function()? switchChainStrategy)
+    required TResult Function(SwitchChainStrategy? switchChainStrategy)
         setSwitchChainStrategy,
     required TResult Function(Future<void> Function()? logoutStrategy)
         setLogoutStrategy,
@@ -803,7 +804,7 @@ class _$NetworkLogoutEvent implements NetworkLogoutEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(ChainModel chain)? switchChain,
     TResult Function()? walletConnected,
-    TResult Function(Future<bool> Function()? switchChainStrategy)?
+    TResult Function(SwitchChainStrategy? switchChainStrategy)?
         setSwitchChainStrategy,
     TResult Function(Future<void> Function()? logoutStrategy)?
         setLogoutStrategy,
@@ -817,7 +818,7 @@ class _$NetworkLogoutEvent implements NetworkLogoutEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(ChainModel chain)? switchChain,
     TResult Function()? walletConnected,
-    TResult Function(Future<bool> Function()? switchChainStrategy)?
+    TResult Function(SwitchChainStrategy? switchChainStrategy)?
         setSwitchChainStrategy,
     TResult Function(Future<void> Function()? logoutStrategy)?
         setLogoutStrategy,
@@ -884,7 +885,7 @@ abstract class NetworkLogoutEvent implements NetworkEvent {
 mixin _$NetworkState {
   ChainModel get currentChain => throw _privateConstructorUsedError;
   bool get hasWalletConnection => throw _privateConstructorUsedError;
-  Future<bool> Function()? get switchChainStrategy =>
+  SwitchChainStrategy? get switchChainStrategy =>
       throw _privateConstructorUsedError;
   Future<void> Function()? get logoutStrategy =>
       throw _privateConstructorUsedError;
@@ -903,7 +904,7 @@ abstract class $NetworkStateCopyWith<$Res> {
   $Res call(
       {ChainModel currentChain,
       bool hasWalletConnection,
-      Future<bool> Function()? switchChainStrategy,
+      SwitchChainStrategy? switchChainStrategy,
       Future<void> Function()? logoutStrategy,
       bool switchChainRejected});
 }
@@ -936,7 +937,7 @@ class _$NetworkStateCopyWithImpl<$Res> implements $NetworkStateCopyWith<$Res> {
       switchChainStrategy: switchChainStrategy == freezed
           ? _value.switchChainStrategy
           : switchChainStrategy // ignore: cast_nullable_to_non_nullable
-              as Future<bool> Function()?,
+              as SwitchChainStrategy?,
       logoutStrategy: logoutStrategy == freezed
           ? _value.logoutStrategy
           : logoutStrategy // ignore: cast_nullable_to_non_nullable
@@ -959,7 +960,7 @@ abstract class _$$_NetworkStateCopyWith<$Res>
   $Res call(
       {ChainModel currentChain,
       bool hasWalletConnection,
-      Future<bool> Function()? switchChainStrategy,
+      SwitchChainStrategy? switchChainStrategy,
       Future<void> Function()? logoutStrategy,
       bool switchChainRejected});
 }
@@ -995,7 +996,7 @@ class __$$_NetworkStateCopyWithImpl<$Res>
       switchChainStrategy: switchChainStrategy == freezed
           ? _value.switchChainStrategy
           : switchChainStrategy // ignore: cast_nullable_to_non_nullable
-              as Future<bool> Function()?,
+              as SwitchChainStrategy?,
       logoutStrategy: logoutStrategy == freezed
           ? _value.logoutStrategy
           : logoutStrategy // ignore: cast_nullable_to_non_nullable
@@ -1024,7 +1025,7 @@ class _$_NetworkState implements _NetworkState {
   @JsonKey()
   final bool hasWalletConnection;
   @override
-  final Future<bool> Function()? switchChainStrategy;
+  final SwitchChainStrategy? switchChainStrategy;
   @override
   final Future<void> Function()? logoutStrategy;
   @override
@@ -1045,8 +1046,8 @@ class _$_NetworkState implements _NetworkState {
                 .equals(other.currentChain, currentChain) &&
             const DeepCollectionEquality()
                 .equals(other.hasWalletConnection, hasWalletConnection) &&
-            (identical(other.switchChainStrategy, switchChainStrategy) ||
-                other.switchChainStrategy == switchChainStrategy) &&
+            const DeepCollectionEquality()
+                .equals(other.switchChainStrategy, switchChainStrategy) &&
             (identical(other.logoutStrategy, logoutStrategy) ||
                 other.logoutStrategy == logoutStrategy) &&
             const DeepCollectionEquality()
@@ -1058,7 +1059,7 @@ class _$_NetworkState implements _NetworkState {
       runtimeType,
       const DeepCollectionEquality().hash(currentChain),
       const DeepCollectionEquality().hash(hasWalletConnection),
-      switchChainStrategy,
+      const DeepCollectionEquality().hash(switchChainStrategy),
       logoutStrategy,
       const DeepCollectionEquality().hash(switchChainRejected));
 
@@ -1072,7 +1073,7 @@ abstract class _NetworkState implements NetworkState {
   factory _NetworkState(
       {required final ChainModel currentChain,
       final bool hasWalletConnection,
-      final Future<bool> Function()? switchChainStrategy,
+      final SwitchChainStrategy? switchChainStrategy,
       final Future<void> Function()? logoutStrategy,
       final bool switchChainRejected}) = _$_NetworkState;
 
@@ -1081,7 +1082,7 @@ abstract class _NetworkState implements NetworkState {
   @override
   bool get hasWalletConnection;
   @override
-  Future<bool> Function()? get switchChainStrategy;
+  SwitchChainStrategy? get switchChainStrategy;
   @override
   Future<void> Function()? get logoutStrategy;
   @override

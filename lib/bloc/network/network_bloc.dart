@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter_blockchain_app/models/chain/chain_model.dart';
+import 'package:flutter_blockchain_app/web3/switch_chain_strategies/switch_chain_strategy.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'network_bloc.freezed.dart';
@@ -27,7 +28,7 @@ class NetworkBloc extends Bloc<NetworkEvent, NetworkState> {
   }
 
   Future<void> _switchChain(NetworkSwitchChainEvent event, Emitter<NetworkState> emit) async {
-    final chainSwitchSuccess = await state.switchChainStrategy?.call() ?? true;
+    final chainSwitchSuccess = await state.switchChainStrategy?.execute(event.chain) ?? true;
     if (chainSwitchSuccess) {
       emit(state.copyWith(
         currentChain: event.chain,

@@ -22,6 +22,7 @@ class Web3ClientBloc extends Bloc<Web3ClientEvent, Web3ClientState> {
       client: event.client,
     ));
   }
+
   Future<void> _createFromRpc(Web3ClientCreateFromRpcEvent event, Emitter<Web3ClientState> emit) async {
     await _resetClient();
     emit(state.copyWith(

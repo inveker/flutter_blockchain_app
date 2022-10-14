@@ -19,22 +19,16 @@ mixin _$BrowserExtensionProviderEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() connect,
-    required TResult Function(bool isSupported) setIsSupported,
-    required TResult Function(bool isInstalled) setIsInstalled,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? connect,
-    TResult Function(bool isSupported)? setIsSupported,
-    TResult Function(bool isInstalled)? setIsInstalled,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? connect,
-    TResult Function(bool isSupported)? setIsSupported,
-    TResult Function(bool isInstalled)? setIsInstalled,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -42,28 +36,16 @@ mixin _$BrowserExtensionProviderEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(BrowserExtensionProviderConnectEvent value)
         connect,
-    required TResult Function(BrowserExtensionProviderSetIsSupportedEvent value)
-        setIsSupported,
-    required TResult Function(BrowserExtensionProviderSetIsInstalledEvent value)
-        setIsInstalled,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(BrowserExtensionProviderConnectEvent value)? connect,
-    TResult Function(BrowserExtensionProviderSetIsSupportedEvent value)?
-        setIsSupported,
-    TResult Function(BrowserExtensionProviderSetIsInstalledEvent value)?
-        setIsInstalled,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BrowserExtensionProviderConnectEvent value)? connect,
-    TResult Function(BrowserExtensionProviderSetIsSupportedEvent value)?
-        setIsSupported,
-    TResult Function(BrowserExtensionProviderSetIsInstalledEvent value)?
-        setIsInstalled,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -135,8 +117,6 @@ class _$BrowserExtensionProviderConnectEvent
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() connect,
-    required TResult Function(bool isSupported) setIsSupported,
-    required TResult Function(bool isInstalled) setIsInstalled,
   }) {
     return connect();
   }
@@ -145,8 +125,6 @@ class _$BrowserExtensionProviderConnectEvent
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? connect,
-    TResult Function(bool isSupported)? setIsSupported,
-    TResult Function(bool isInstalled)? setIsInstalled,
   }) {
     return connect?.call();
   }
@@ -155,8 +133,6 @@ class _$BrowserExtensionProviderConnectEvent
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? connect,
-    TResult Function(bool isSupported)? setIsSupported,
-    TResult Function(bool isInstalled)? setIsInstalled,
     required TResult orElse(),
   }) {
     if (connect != null) {
@@ -170,10 +146,6 @@ class _$BrowserExtensionProviderConnectEvent
   TResult map<TResult extends Object?>({
     required TResult Function(BrowserExtensionProviderConnectEvent value)
         connect,
-    required TResult Function(BrowserExtensionProviderSetIsSupportedEvent value)
-        setIsSupported,
-    required TResult Function(BrowserExtensionProviderSetIsInstalledEvent value)
-        setIsInstalled,
   }) {
     return connect(this);
   }
@@ -182,10 +154,6 @@ class _$BrowserExtensionProviderConnectEvent
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(BrowserExtensionProviderConnectEvent value)? connect,
-    TResult Function(BrowserExtensionProviderSetIsSupportedEvent value)?
-        setIsSupported,
-    TResult Function(BrowserExtensionProviderSetIsInstalledEvent value)?
-        setIsInstalled,
   }) {
     return connect?.call(this);
   }
@@ -194,10 +162,6 @@ class _$BrowserExtensionProviderConnectEvent
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BrowserExtensionProviderConnectEvent value)? connect,
-    TResult Function(BrowserExtensionProviderSetIsSupportedEvent value)?
-        setIsSupported,
-    TResult Function(BrowserExtensionProviderSetIsInstalledEvent value)?
-        setIsInstalled,
     required TResult orElse(),
   }) {
     if (connect != null) {
@@ -211,324 +175,6 @@ abstract class BrowserExtensionProviderConnectEvent
     implements BrowserExtensionProviderEvent {
   factory BrowserExtensionProviderConnectEvent() =
       _$BrowserExtensionProviderConnectEvent;
-}
-
-/// @nodoc
-abstract class _$$BrowserExtensionProviderSetIsSupportedEventCopyWith<$Res> {
-  factory _$$BrowserExtensionProviderSetIsSupportedEventCopyWith(
-          _$BrowserExtensionProviderSetIsSupportedEvent value,
-          $Res Function(_$BrowserExtensionProviderSetIsSupportedEvent) then) =
-      __$$BrowserExtensionProviderSetIsSupportedEventCopyWithImpl<$Res>;
-  $Res call({bool isSupported});
-}
-
-/// @nodoc
-class __$$BrowserExtensionProviderSetIsSupportedEventCopyWithImpl<$Res>
-    extends _$BrowserExtensionProviderEventCopyWithImpl<$Res>
-    implements _$$BrowserExtensionProviderSetIsSupportedEventCopyWith<$Res> {
-  __$$BrowserExtensionProviderSetIsSupportedEventCopyWithImpl(
-      _$BrowserExtensionProviderSetIsSupportedEvent _value,
-      $Res Function(_$BrowserExtensionProviderSetIsSupportedEvent) _then)
-      : super(_value,
-            (v) => _then(v as _$BrowserExtensionProviderSetIsSupportedEvent));
-
-  @override
-  _$BrowserExtensionProviderSetIsSupportedEvent get _value =>
-      super._value as _$BrowserExtensionProviderSetIsSupportedEvent;
-
-  @override
-  $Res call({
-    Object? isSupported = freezed,
-  }) {
-    return _then(_$BrowserExtensionProviderSetIsSupportedEvent(
-      isSupported == freezed
-          ? _value.isSupported
-          : isSupported // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$BrowserExtensionProviderSetIsSupportedEvent
-    implements BrowserExtensionProviderSetIsSupportedEvent {
-  _$BrowserExtensionProviderSetIsSupportedEvent(this.isSupported);
-
-  @override
-  final bool isSupported;
-
-  @override
-  String toString() {
-    return 'BrowserExtensionProviderEvent.setIsSupported(isSupported: $isSupported)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$BrowserExtensionProviderSetIsSupportedEvent &&
-            const DeepCollectionEquality()
-                .equals(other.isSupported, isSupported));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(isSupported));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$BrowserExtensionProviderSetIsSupportedEventCopyWith<
-          _$BrowserExtensionProviderSetIsSupportedEvent>
-      get copyWith =>
-          __$$BrowserExtensionProviderSetIsSupportedEventCopyWithImpl<
-              _$BrowserExtensionProviderSetIsSupportedEvent>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() connect,
-    required TResult Function(bool isSupported) setIsSupported,
-    required TResult Function(bool isInstalled) setIsInstalled,
-  }) {
-    return setIsSupported(isSupported);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? connect,
-    TResult Function(bool isSupported)? setIsSupported,
-    TResult Function(bool isInstalled)? setIsInstalled,
-  }) {
-    return setIsSupported?.call(isSupported);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? connect,
-    TResult Function(bool isSupported)? setIsSupported,
-    TResult Function(bool isInstalled)? setIsInstalled,
-    required TResult orElse(),
-  }) {
-    if (setIsSupported != null) {
-      return setIsSupported(isSupported);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(BrowserExtensionProviderConnectEvent value)
-        connect,
-    required TResult Function(BrowserExtensionProviderSetIsSupportedEvent value)
-        setIsSupported,
-    required TResult Function(BrowserExtensionProviderSetIsInstalledEvent value)
-        setIsInstalled,
-  }) {
-    return setIsSupported(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(BrowserExtensionProviderConnectEvent value)? connect,
-    TResult Function(BrowserExtensionProviderSetIsSupportedEvent value)?
-        setIsSupported,
-    TResult Function(BrowserExtensionProviderSetIsInstalledEvent value)?
-        setIsInstalled,
-  }) {
-    return setIsSupported?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(BrowserExtensionProviderConnectEvent value)? connect,
-    TResult Function(BrowserExtensionProviderSetIsSupportedEvent value)?
-        setIsSupported,
-    TResult Function(BrowserExtensionProviderSetIsInstalledEvent value)?
-        setIsInstalled,
-    required TResult orElse(),
-  }) {
-    if (setIsSupported != null) {
-      return setIsSupported(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class BrowserExtensionProviderSetIsSupportedEvent
-    implements BrowserExtensionProviderEvent {
-  factory BrowserExtensionProviderSetIsSupportedEvent(final bool isSupported) =
-      _$BrowserExtensionProviderSetIsSupportedEvent;
-
-  bool get isSupported;
-  @JsonKey(ignore: true)
-  _$$BrowserExtensionProviderSetIsSupportedEventCopyWith<
-          _$BrowserExtensionProviderSetIsSupportedEvent>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$BrowserExtensionProviderSetIsInstalledEventCopyWith<$Res> {
-  factory _$$BrowserExtensionProviderSetIsInstalledEventCopyWith(
-          _$BrowserExtensionProviderSetIsInstalledEvent value,
-          $Res Function(_$BrowserExtensionProviderSetIsInstalledEvent) then) =
-      __$$BrowserExtensionProviderSetIsInstalledEventCopyWithImpl<$Res>;
-  $Res call({bool isInstalled});
-}
-
-/// @nodoc
-class __$$BrowserExtensionProviderSetIsInstalledEventCopyWithImpl<$Res>
-    extends _$BrowserExtensionProviderEventCopyWithImpl<$Res>
-    implements _$$BrowserExtensionProviderSetIsInstalledEventCopyWith<$Res> {
-  __$$BrowserExtensionProviderSetIsInstalledEventCopyWithImpl(
-      _$BrowserExtensionProviderSetIsInstalledEvent _value,
-      $Res Function(_$BrowserExtensionProviderSetIsInstalledEvent) _then)
-      : super(_value,
-            (v) => _then(v as _$BrowserExtensionProviderSetIsInstalledEvent));
-
-  @override
-  _$BrowserExtensionProviderSetIsInstalledEvent get _value =>
-      super._value as _$BrowserExtensionProviderSetIsInstalledEvent;
-
-  @override
-  $Res call({
-    Object? isInstalled = freezed,
-  }) {
-    return _then(_$BrowserExtensionProviderSetIsInstalledEvent(
-      isInstalled == freezed
-          ? _value.isInstalled
-          : isInstalled // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$BrowserExtensionProviderSetIsInstalledEvent
-    implements BrowserExtensionProviderSetIsInstalledEvent {
-  _$BrowserExtensionProviderSetIsInstalledEvent(this.isInstalled);
-
-  @override
-  final bool isInstalled;
-
-  @override
-  String toString() {
-    return 'BrowserExtensionProviderEvent.setIsInstalled(isInstalled: $isInstalled)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$BrowserExtensionProviderSetIsInstalledEvent &&
-            const DeepCollectionEquality()
-                .equals(other.isInstalled, isInstalled));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(isInstalled));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$BrowserExtensionProviderSetIsInstalledEventCopyWith<
-          _$BrowserExtensionProviderSetIsInstalledEvent>
-      get copyWith =>
-          __$$BrowserExtensionProviderSetIsInstalledEventCopyWithImpl<
-              _$BrowserExtensionProviderSetIsInstalledEvent>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() connect,
-    required TResult Function(bool isSupported) setIsSupported,
-    required TResult Function(bool isInstalled) setIsInstalled,
-  }) {
-    return setIsInstalled(isInstalled);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? connect,
-    TResult Function(bool isSupported)? setIsSupported,
-    TResult Function(bool isInstalled)? setIsInstalled,
-  }) {
-    return setIsInstalled?.call(isInstalled);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? connect,
-    TResult Function(bool isSupported)? setIsSupported,
-    TResult Function(bool isInstalled)? setIsInstalled,
-    required TResult orElse(),
-  }) {
-    if (setIsInstalled != null) {
-      return setIsInstalled(isInstalled);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(BrowserExtensionProviderConnectEvent value)
-        connect,
-    required TResult Function(BrowserExtensionProviderSetIsSupportedEvent value)
-        setIsSupported,
-    required TResult Function(BrowserExtensionProviderSetIsInstalledEvent value)
-        setIsInstalled,
-  }) {
-    return setIsInstalled(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(BrowserExtensionProviderConnectEvent value)? connect,
-    TResult Function(BrowserExtensionProviderSetIsSupportedEvent value)?
-        setIsSupported,
-    TResult Function(BrowserExtensionProviderSetIsInstalledEvent value)?
-        setIsInstalled,
-  }) {
-    return setIsInstalled?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(BrowserExtensionProviderConnectEvent value)? connect,
-    TResult Function(BrowserExtensionProviderSetIsSupportedEvent value)?
-        setIsSupported,
-    TResult Function(BrowserExtensionProviderSetIsInstalledEvent value)?
-        setIsInstalled,
-    required TResult orElse(),
-  }) {
-    if (setIsInstalled != null) {
-      return setIsInstalled(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class BrowserExtensionProviderSetIsInstalledEvent
-    implements BrowserExtensionProviderEvent {
-  factory BrowserExtensionProviderSetIsInstalledEvent(final bool isInstalled) =
-      _$BrowserExtensionProviderSetIsInstalledEvent;
-
-  bool get isInstalled;
-  @JsonKey(ignore: true)
-  _$$BrowserExtensionProviderSetIsInstalledEventCopyWith<
-          _$BrowserExtensionProviderSetIsInstalledEvent>
-      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc

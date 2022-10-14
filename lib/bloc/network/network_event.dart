@@ -6,7 +6,7 @@ class NetworkEvent with _$NetworkEvent {
 
   factory NetworkEvent.walletConnected() = NetworkWalletConnectedEvent;
 
-  factory NetworkEvent.setSwitchChainStrategy(Future<bool> Function()? switchChainStrategy) = NetworkSetSwitchChainStrategyEvent;
+  factory NetworkEvent.setSwitchChainStrategy(SwitchChainStrategy? switchChainStrategy) = NetworkSetSwitchChainStrategyEvent;
 
   factory NetworkEvent.setLogoutStrategy(Future<void> Function()? logoutStrategy) = NetworkSetLogoutStrategyEvent;
 

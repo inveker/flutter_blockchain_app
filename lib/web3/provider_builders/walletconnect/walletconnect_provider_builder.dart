@@ -9,11 +9,7 @@ class WalletConnectProviderBuilder {
   late final WalletConnect _walletConnect;
 
   WalletConnectProviderBuilder() {
-    _walletConnect = _buildWalletConnect();
-  }
-
-  WalletConnect _buildWalletConnect() {
-    return WalletConnect(
+    _walletConnect = WalletConnect(
       bridge: 'https://bridge.walletconnect.org',
       clientMeta: PeerMeta(
         name: 'WalletConnect',
@@ -21,6 +17,16 @@ class WalletConnectProviderBuilder {
         url: 'https://walletconnect.org',
         icons: ['https://gblobscdn.gitbook.com/spaces%2F-LJJeCjcLrr53DcT1Ml7%2Favatar.png?alt=media'],
       ),
+    );
+  }
+
+  WalletConnectSession get session => _walletConnect.session;
+
+  WalletConnectProviderBuilder.fromSession({
+    required WalletConnectSession session,
+  }) {
+    _walletConnect = WalletConnect(
+      session: session,
     );
   }
 
@@ -43,6 +49,13 @@ class WalletConnectProviderBuilder {
     return WalletConnectCredentials(
       EthereumWalletConnectProvider(_walletConnect),
       addressHex: accounts.first,
+    );
+  }
+
+  CredentialsWithKnownAddress restoreCredentials() {
+    return WalletConnectCredentials(
+      EthereumWalletConnectProvider(_walletConnect),
+      addressHex: _walletConnect.session.accounts.first,
     );
   }
 }
