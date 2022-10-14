@@ -28,6 +28,8 @@ class NetworkBloc extends Bloc<NetworkEvent, NetworkState> {
   }
 
   Future<void> _switchChain(NetworkSwitchChainEvent event, Emitter<NetworkState> emit) async {
+    if(!chains.contains(event.chain)) throw Exception('NetworkBloc: Unregistered chain');
+
     final chainSwitchSuccess = await state.switchChainStrategy?.execute(event.chain) ?? true;
     if (chainSwitchSuccess) {
       emit(state.copyWith(

@@ -13,7 +13,6 @@ part 'walletconnect_provider_event.dart';
 part 'walletconnect_provider_state.dart';
 
 class WalletConnectProviderBloc extends HydratedBloc<WalletConnectProviderEvent, WalletConnectProviderState> {
-
   WalletConnectProviderBuilder? _walletConnectProvider;
 
   WalletConnectProviderBloc() : super(WalletConnectProviderState()) {
@@ -43,12 +42,17 @@ class WalletConnectProviderBloc extends HydratedBloc<WalletConnectProviderEvent,
 
   @override
   WalletConnectProviderState? fromJson(Map<String, dynamic> json) {
-    final session = WalletConnectSession.fromJson(json['session']);
-    _walletConnectProvider = WalletConnectProviderBuilder.fromSession(session: session);
+    final session = WalletConnectSession.fromJson(
+      json['session'],
+    );
+    _walletConnectProvider = WalletConnectProviderBuilder.fromSession(
+      session: session,
+    );
+
     return WalletConnectProviderState(
       isConnected: json['isConnected'],
       rpcService: _walletConnectProvider!.buildRpcService(),
-      credentials: _walletConnectProvider!.restoreCredentials()
+      credentials: _walletConnectProvider!.restoreCredentials(),
     );
   }
 

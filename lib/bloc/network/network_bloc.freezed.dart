@@ -107,6 +107,8 @@ abstract class _$$NetworkSwitchChainEventCopyWith<$Res> {
           $Res Function(_$NetworkSwitchChainEvent) then) =
       __$$NetworkSwitchChainEventCopyWithImpl<$Res>;
   $Res call({ChainModel chain});
+
+  $ChainModelCopyWith<$Res> get chain;
 }
 
 /// @nodoc
@@ -131,6 +133,13 @@ class __$$NetworkSwitchChainEventCopyWithImpl<$Res>
           : chain // ignore: cast_nullable_to_non_nullable
               as ChainModel,
     ));
+  }
+
+  @override
+  $ChainModelCopyWith<$Res> get chain {
+    return $ChainModelCopyWith<$Res>(_value.chain, (value) {
+      return _then(_value.copyWith(chain: value));
+    });
   }
 }
 
@@ -907,6 +916,8 @@ abstract class $NetworkStateCopyWith<$Res> {
       SwitchChainStrategy? switchChainStrategy,
       Future<void> Function()? logoutStrategy,
       bool switchChainRejected});
+
+  $ChainModelCopyWith<$Res> get currentChain;
 }
 
 /// @nodoc
@@ -948,6 +959,13 @@ class _$NetworkStateCopyWithImpl<$Res> implements $NetworkStateCopyWith<$Res> {
               as bool,
     ));
   }
+
+  @override
+  $ChainModelCopyWith<$Res> get currentChain {
+    return $ChainModelCopyWith<$Res>(_value.currentChain, (value) {
+      return _then(_value.copyWith(currentChain: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -963,6 +981,9 @@ abstract class _$$_NetworkStateCopyWith<$Res>
       SwitchChainStrategy? switchChainStrategy,
       Future<void> Function()? logoutStrategy,
       bool switchChainRejected});
+
+  @override
+  $ChainModelCopyWith<$Res> get currentChain;
 }
 
 /// @nodoc

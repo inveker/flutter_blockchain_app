@@ -1,15 +1,17 @@
-class ChainModel {
-  final int id;
-  final String name;
-  final String? image;
-  final String? defaultRpcUrl;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  ChainModel({
-    required this.id,
-    required this.name,
-    this.image,
-    this.defaultRpcUrl,
-  });
+part 'chain_model.freezed.dart';
+
+@freezed
+class ChainModel with _$ChainModel {
+  const ChainModel._();
+
+  factory ChainModel({
+    required int id,
+    required String name,
+    String? image,
+    String? defaultRpcUrl,
+  }) = _ChainModel;
 
   String getHexId() {
     return '0x${id.toRadixString(16)}';
