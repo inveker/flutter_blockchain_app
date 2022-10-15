@@ -6,7 +6,6 @@ class NetworkState with _$NetworkState {
     required ChainModel currentChain,
     @Default(false) bool hasWalletConnection,
     SwitchChainStrategy? switchChainStrategy,
-    Future<void> Function()? logoutStrategy,
     @Default(false) bool switchChainRejected,
 }) = _NetworkState;
 }

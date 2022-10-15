@@ -12,12 +12,7 @@ class NetworkBlocListeners {
         final rpcBloc = context.read<RpcBloc>();
 
         if (!state.hasWalletConnection) {
-          final defaultRpcUrl = state.currentChain.defaultRpcUrl;
-          if (defaultRpcUrl != null) {
-            rpcBloc.add(RpcEvent.createFromUrl(defaultRpcUrl));
-          } else {
-            rpcBloc.add(RpcEvent.set(null));
-          }
+          rpcBloc.add(RpcEvent.createFromUrl(state.currentChain.rpcUrl));
         }
       },
     );
@@ -38,12 +33,7 @@ class NetworkBlocListeners {
           walletConnectProviderBloc.add(WalletConnectProviderEvent.reset());
         }
 
-        final defaultRpcUrl = state.currentChain.defaultRpcUrl;
-        if (defaultRpcUrl != null) {
-          rpcBloc.add(RpcEvent.createFromUrl(defaultRpcUrl));
-        } else {
-          rpcBloc.add(RpcEvent.set(null));
-        }
+        rpcBloc.add(RpcEvent.createFromUrl(state.currentChain.rpcUrl));
       },
     );
   }

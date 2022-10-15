@@ -26,10 +26,18 @@ class _AppState extends State<App> {
         ChainModel(
           id: 1,
           name: 'Mainnet',
+          rpcUrl: 'https://mainnet.infura.io/v3/',
+          nativeCurrencySymbol: 'ETH',
+          nativeCurrencyDecimals: 18,
+          blockExplorerUrls: 'https://etherscan.io',
         ),
         ChainModel(
           id: 137,
-          name: 'Polygon',
+          name: 'Polygon Mainnet',
+          rpcUrl: 'https://polygon-rpc.com/',
+          nativeCurrencySymbol: 'MATIC',
+          nativeCurrencyDecimals: 18,
+          blockExplorerUrls: 'https://polygonscan.com/',
         ),
       ],
       child: MaterialApp.router(

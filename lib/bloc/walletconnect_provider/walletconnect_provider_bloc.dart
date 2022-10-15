@@ -63,6 +63,8 @@ class WalletConnectProviderBloc extends HydratedBloc<WalletConnectProviderEvent,
   }
 
   Future<void> _reset(WalletConnectProviderResetEvent event, Emitter<WalletConnectProviderState> emit) async {
+    _walletConnectProvider?.session.reset();
+    await _walletConnectProvider?.walletConnect.close(forceClose: true);
     emit(WalletConnectProviderState());
   }
 

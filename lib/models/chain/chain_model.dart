@@ -9,8 +9,11 @@ class ChainModel with _$ChainModel {
   factory ChainModel({
     required int id,
     required String name,
+    required String rpcUrl,
+    required String nativeCurrencySymbol,
+    required int nativeCurrencyDecimals,
+    required String blockExplorerUrls,
     String? image,
-    String? defaultRpcUrl,
   }) = _ChainModel;
 
   String getHexId() {

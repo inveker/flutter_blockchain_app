@@ -20,6 +20,8 @@ class WalletConnectProviderBuilder {
     );
   }
 
+  WalletConnect get walletConnect => _walletConnect;
+
   WalletConnectSession get session => _walletConnect.session;
 
   WalletConnectProviderBuilder.fromSession({

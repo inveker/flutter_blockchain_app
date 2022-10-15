@@ -23,7 +23,6 @@ class NetworkBloc extends Bloc<NetworkEvent, NetworkState> {
     on<NetworkSwitchChainEvent>(_switchChain);
     on<NetworkWalletConnectedEvent>(_walletConnected);
     on<NetworkSetSwitchChainStrategyEvent>(_setSwitchChainStrategy);
-    on<NetworkSetLogoutStrategyEvent>(_setLogoutStrategy);
     on<NetworkLogoutEvent>(_logout);
   }
 
@@ -55,14 +54,7 @@ class NetworkBloc extends Bloc<NetworkEvent, NetworkState> {
     ));
   }
 
-  Future<void> _setLogoutStrategy(NetworkSetLogoutStrategyEvent event, Emitter<NetworkState> emit) async {
-    emit(state.copyWith(
-      logoutStrategy: event.logoutStrategy,
-    ));
-  }
-
   Future<void> _logout(NetworkLogoutEvent event, Emitter<NetworkState> emit) async {
-    await state.logoutStrategy?.call();
     emit(state.copyWith(
       hasWalletConnection: false,
     ));

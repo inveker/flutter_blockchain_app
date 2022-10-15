@@ -8,7 +8,5 @@ class NetworkEvent with _$NetworkEvent {
 
   factory NetworkEvent.setSwitchChainStrategy(SwitchChainStrategy? switchChainStrategy) = NetworkSetSwitchChainStrategyEvent;
 
-  factory NetworkEvent.setLogoutStrategy(Future<void> Function()? logoutStrategy) = NetworkSetLogoutStrategyEvent;
-
   factory NetworkEvent.logout() = NetworkLogoutEvent;
 }

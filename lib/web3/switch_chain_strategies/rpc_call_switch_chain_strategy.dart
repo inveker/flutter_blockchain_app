@@ -3,6 +3,8 @@ import 'package:flutter_blockchain_app/web3/switch_chain_strategies/switch_chain
 import 'package:web3dart/json_rpc.dart';
 
 class RpcCallSwitchChainStrategy implements SwitchChainStrategy {
+  static const int chainNotExistsErrorCode = 4902;
+
   final RpcService rpcService;
 
   RpcCallSwitchChainStrategy({
@@ -11,11 +13,29 @@ class RpcCallSwitchChainStrategy implements SwitchChainStrategy {
 
   @override
   Future<bool> execute(ChainModel chain) async {
-    final response = await rpcService.call('wallet_switchEthereumChain', [
-      {
-        'chainId': chain.getHexId(),
-      }
-    ]);
-    return response.result == null;
+    try {
+      final response = await rpcService.call('wallet_switchEthereumChain', [
+        {
+          'chainId': chain.getHexId(),
+        }
+      ]);
+      return response.result == null;
+    } on RPCError catch (e) {
+      if(e.errorCode != chainNotExistsErrorCode) rethrow;
+
+      final response = await rpcService.call('wallet_addEthereumChain', [
+        {
+          'chainId': chain.getHexId(),
+          'chainName': chain.name,
+          'rpcUrls': [chain.rpcUrl],
+          'nativeCurrency': {
+            'symbol': chain.nativeCurrencySymbol,
+            'decimals': 18
+          },
+          'blockExplorerUrls': [chain.blockExplorerUrls],
+        }
+      ]);
+      return response.result == null;
+    }
   }
 }

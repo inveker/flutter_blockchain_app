@@ -36,7 +36,7 @@ class Web3ContextProviders extends StatelessWidget {
           ),
           BlocProvider<RpcBloc>(
             create: (context) => RpcBloc(
-              rpcUrl: context.read<NetworkBloc>().state.currentChain.defaultRpcUrl,
+              rpcUrl: context.read<NetworkBloc>().state.currentChain.rpcUrl,
             ),
           ),
           BlocProvider<Web3ClientBloc>(

@@ -22,8 +22,6 @@ mixin _$NetworkEvent {
     required TResult Function() walletConnected,
     required TResult Function(SwitchChainStrategy? switchChainStrategy)
         setSwitchChainStrategy,
-    required TResult Function(Future<void> Function()? logoutStrategy)
-        setLogoutStrategy,
     required TResult Function() logout,
   }) =>
       throw _privateConstructorUsedError;
@@ -33,8 +31,6 @@ mixin _$NetworkEvent {
     TResult Function()? walletConnected,
     TResult Function(SwitchChainStrategy? switchChainStrategy)?
         setSwitchChainStrategy,
-    TResult Function(Future<void> Function()? logoutStrategy)?
-        setLogoutStrategy,
     TResult Function()? logout,
   }) =>
       throw _privateConstructorUsedError;
@@ -44,8 +40,6 @@ mixin _$NetworkEvent {
     TResult Function()? walletConnected,
     TResult Function(SwitchChainStrategy? switchChainStrategy)?
         setSwitchChainStrategy,
-    TResult Function(Future<void> Function()? logoutStrategy)?
-        setLogoutStrategy,
     TResult Function()? logout,
     required TResult orElse(),
   }) =>
@@ -57,8 +51,6 @@ mixin _$NetworkEvent {
         walletConnected,
     required TResult Function(NetworkSetSwitchChainStrategyEvent value)
         setSwitchChainStrategy,
-    required TResult Function(NetworkSetLogoutStrategyEvent value)
-        setLogoutStrategy,
     required TResult Function(NetworkLogoutEvent value) logout,
   }) =>
       throw _privateConstructorUsedError;
@@ -68,7 +60,6 @@ mixin _$NetworkEvent {
     TResult Function(NetworkWalletConnectedEvent value)? walletConnected,
     TResult Function(NetworkSetSwitchChainStrategyEvent value)?
         setSwitchChainStrategy,
-    TResult Function(NetworkSetLogoutStrategyEvent value)? setLogoutStrategy,
     TResult Function(NetworkLogoutEvent value)? logout,
   }) =>
       throw _privateConstructorUsedError;
@@ -78,7 +69,6 @@ mixin _$NetworkEvent {
     TResult Function(NetworkWalletConnectedEvent value)? walletConnected,
     TResult Function(NetworkSetSwitchChainStrategyEvent value)?
         setSwitchChainStrategy,
-    TResult Function(NetworkSetLogoutStrategyEvent value)? setLogoutStrategy,
     TResult Function(NetworkLogoutEvent value)? logout,
     required TResult orElse(),
   }) =>
@@ -181,8 +171,6 @@ class _$NetworkSwitchChainEvent implements NetworkSwitchChainEvent {
     required TResult Function() walletConnected,
     required TResult Function(SwitchChainStrategy? switchChainStrategy)
         setSwitchChainStrategy,
-    required TResult Function(Future<void> Function()? logoutStrategy)
-        setLogoutStrategy,
     required TResult Function() logout,
   }) {
     return switchChain(chain);
@@ -195,8 +183,6 @@ class _$NetworkSwitchChainEvent implements NetworkSwitchChainEvent {
     TResult Function()? walletConnected,
     TResult Function(SwitchChainStrategy? switchChainStrategy)?
         setSwitchChainStrategy,
-    TResult Function(Future<void> Function()? logoutStrategy)?
-        setLogoutStrategy,
     TResult Function()? logout,
   }) {
     return switchChain?.call(chain);
@@ -209,8 +195,6 @@ class _$NetworkSwitchChainEvent implements NetworkSwitchChainEvent {
     TResult Function()? walletConnected,
     TResult Function(SwitchChainStrategy? switchChainStrategy)?
         setSwitchChainStrategy,
-    TResult Function(Future<void> Function()? logoutStrategy)?
-        setLogoutStrategy,
     TResult Function()? logout,
     required TResult orElse(),
   }) {
@@ -228,8 +212,6 @@ class _$NetworkSwitchChainEvent implements NetworkSwitchChainEvent {
         walletConnected,
     required TResult Function(NetworkSetSwitchChainStrategyEvent value)
         setSwitchChainStrategy,
-    required TResult Function(NetworkSetLogoutStrategyEvent value)
-        setLogoutStrategy,
     required TResult Function(NetworkLogoutEvent value) logout,
   }) {
     return switchChain(this);
@@ -242,7 +224,6 @@ class _$NetworkSwitchChainEvent implements NetworkSwitchChainEvent {
     TResult Function(NetworkWalletConnectedEvent value)? walletConnected,
     TResult Function(NetworkSetSwitchChainStrategyEvent value)?
         setSwitchChainStrategy,
-    TResult Function(NetworkSetLogoutStrategyEvent value)? setLogoutStrategy,
     TResult Function(NetworkLogoutEvent value)? logout,
   }) {
     return switchChain?.call(this);
@@ -255,7 +236,6 @@ class _$NetworkSwitchChainEvent implements NetworkSwitchChainEvent {
     TResult Function(NetworkWalletConnectedEvent value)? walletConnected,
     TResult Function(NetworkSetSwitchChainStrategyEvent value)?
         setSwitchChainStrategy,
-    TResult Function(NetworkSetLogoutStrategyEvent value)? setLogoutStrategy,
     TResult Function(NetworkLogoutEvent value)? logout,
     required TResult orElse(),
   }) {
@@ -325,8 +305,6 @@ class _$NetworkWalletConnectedEvent implements NetworkWalletConnectedEvent {
     required TResult Function() walletConnected,
     required TResult Function(SwitchChainStrategy? switchChainStrategy)
         setSwitchChainStrategy,
-    required TResult Function(Future<void> Function()? logoutStrategy)
-        setLogoutStrategy,
     required TResult Function() logout,
   }) {
     return walletConnected();
@@ -339,8 +317,6 @@ class _$NetworkWalletConnectedEvent implements NetworkWalletConnectedEvent {
     TResult Function()? walletConnected,
     TResult Function(SwitchChainStrategy? switchChainStrategy)?
         setSwitchChainStrategy,
-    TResult Function(Future<void> Function()? logoutStrategy)?
-        setLogoutStrategy,
     TResult Function()? logout,
   }) {
     return walletConnected?.call();
@@ -353,8 +329,6 @@ class _$NetworkWalletConnectedEvent implements NetworkWalletConnectedEvent {
     TResult Function()? walletConnected,
     TResult Function(SwitchChainStrategy? switchChainStrategy)?
         setSwitchChainStrategy,
-    TResult Function(Future<void> Function()? logoutStrategy)?
-        setLogoutStrategy,
     TResult Function()? logout,
     required TResult orElse(),
   }) {
@@ -372,8 +346,6 @@ class _$NetworkWalletConnectedEvent implements NetworkWalletConnectedEvent {
         walletConnected,
     required TResult Function(NetworkSetSwitchChainStrategyEvent value)
         setSwitchChainStrategy,
-    required TResult Function(NetworkSetLogoutStrategyEvent value)
-        setLogoutStrategy,
     required TResult Function(NetworkLogoutEvent value) logout,
   }) {
     return walletConnected(this);
@@ -386,7 +358,6 @@ class _$NetworkWalletConnectedEvent implements NetworkWalletConnectedEvent {
     TResult Function(NetworkWalletConnectedEvent value)? walletConnected,
     TResult Function(NetworkSetSwitchChainStrategyEvent value)?
         setSwitchChainStrategy,
-    TResult Function(NetworkSetLogoutStrategyEvent value)? setLogoutStrategy,
     TResult Function(NetworkLogoutEvent value)? logout,
   }) {
     return walletConnected?.call(this);
@@ -399,7 +370,6 @@ class _$NetworkWalletConnectedEvent implements NetworkWalletConnectedEvent {
     TResult Function(NetworkWalletConnectedEvent value)? walletConnected,
     TResult Function(NetworkSetSwitchChainStrategyEvent value)?
         setSwitchChainStrategy,
-    TResult Function(NetworkSetLogoutStrategyEvent value)? setLogoutStrategy,
     TResult Function(NetworkLogoutEvent value)? logout,
     required TResult orElse(),
   }) {
@@ -490,8 +460,6 @@ class _$NetworkSetSwitchChainStrategyEvent
     required TResult Function() walletConnected,
     required TResult Function(SwitchChainStrategy? switchChainStrategy)
         setSwitchChainStrategy,
-    required TResult Function(Future<void> Function()? logoutStrategy)
-        setLogoutStrategy,
     required TResult Function() logout,
   }) {
     return setSwitchChainStrategy(switchChainStrategy);
@@ -504,8 +472,6 @@ class _$NetworkSetSwitchChainStrategyEvent
     TResult Function()? walletConnected,
     TResult Function(SwitchChainStrategy? switchChainStrategy)?
         setSwitchChainStrategy,
-    TResult Function(Future<void> Function()? logoutStrategy)?
-        setLogoutStrategy,
     TResult Function()? logout,
   }) {
     return setSwitchChainStrategy?.call(switchChainStrategy);
@@ -518,8 +484,6 @@ class _$NetworkSetSwitchChainStrategyEvent
     TResult Function()? walletConnected,
     TResult Function(SwitchChainStrategy? switchChainStrategy)?
         setSwitchChainStrategy,
-    TResult Function(Future<void> Function()? logoutStrategy)?
-        setLogoutStrategy,
     TResult Function()? logout,
     required TResult orElse(),
   }) {
@@ -537,8 +501,6 @@ class _$NetworkSetSwitchChainStrategyEvent
         walletConnected,
     required TResult Function(NetworkSetSwitchChainStrategyEvent value)
         setSwitchChainStrategy,
-    required TResult Function(NetworkSetLogoutStrategyEvent value)
-        setLogoutStrategy,
     required TResult Function(NetworkLogoutEvent value) logout,
   }) {
     return setSwitchChainStrategy(this);
@@ -551,7 +513,6 @@ class _$NetworkSetSwitchChainStrategyEvent
     TResult Function(NetworkWalletConnectedEvent value)? walletConnected,
     TResult Function(NetworkSetSwitchChainStrategyEvent value)?
         setSwitchChainStrategy,
-    TResult Function(NetworkSetLogoutStrategyEvent value)? setLogoutStrategy,
     TResult Function(NetworkLogoutEvent value)? logout,
   }) {
     return setSwitchChainStrategy?.call(this);
@@ -564,7 +525,6 @@ class _$NetworkSetSwitchChainStrategyEvent
     TResult Function(NetworkWalletConnectedEvent value)? walletConnected,
     TResult Function(NetworkSetSwitchChainStrategyEvent value)?
         setSwitchChainStrategy,
-    TResult Function(NetworkSetLogoutStrategyEvent value)? setLogoutStrategy,
     TResult Function(NetworkLogoutEvent value)? logout,
     required TResult orElse(),
   }) {
@@ -584,175 +544,6 @@ abstract class NetworkSetSwitchChainStrategyEvent implements NetworkEvent {
   @JsonKey(ignore: true)
   _$$NetworkSetSwitchChainStrategyEventCopyWith<
           _$NetworkSetSwitchChainStrategyEvent>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$NetworkSetLogoutStrategyEventCopyWith<$Res> {
-  factory _$$NetworkSetLogoutStrategyEventCopyWith(
-          _$NetworkSetLogoutStrategyEvent value,
-          $Res Function(_$NetworkSetLogoutStrategyEvent) then) =
-      __$$NetworkSetLogoutStrategyEventCopyWithImpl<$Res>;
-  $Res call({Future<void> Function()? logoutStrategy});
-}
-
-/// @nodoc
-class __$$NetworkSetLogoutStrategyEventCopyWithImpl<$Res>
-    extends _$NetworkEventCopyWithImpl<$Res>
-    implements _$$NetworkSetLogoutStrategyEventCopyWith<$Res> {
-  __$$NetworkSetLogoutStrategyEventCopyWithImpl(
-      _$NetworkSetLogoutStrategyEvent _value,
-      $Res Function(_$NetworkSetLogoutStrategyEvent) _then)
-      : super(_value, (v) => _then(v as _$NetworkSetLogoutStrategyEvent));
-
-  @override
-  _$NetworkSetLogoutStrategyEvent get _value =>
-      super._value as _$NetworkSetLogoutStrategyEvent;
-
-  @override
-  $Res call({
-    Object? logoutStrategy = freezed,
-  }) {
-    return _then(_$NetworkSetLogoutStrategyEvent(
-      logoutStrategy == freezed
-          ? _value.logoutStrategy
-          : logoutStrategy // ignore: cast_nullable_to_non_nullable
-              as Future<void> Function()?,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$NetworkSetLogoutStrategyEvent implements NetworkSetLogoutStrategyEvent {
-  _$NetworkSetLogoutStrategyEvent(this.logoutStrategy);
-
-  @override
-  final Future<void> Function()? logoutStrategy;
-
-  @override
-  String toString() {
-    return 'NetworkEvent.setLogoutStrategy(logoutStrategy: $logoutStrategy)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$NetworkSetLogoutStrategyEvent &&
-            (identical(other.logoutStrategy, logoutStrategy) ||
-                other.logoutStrategy == logoutStrategy));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, logoutStrategy);
-
-  @JsonKey(ignore: true)
-  @override
-  _$$NetworkSetLogoutStrategyEventCopyWith<_$NetworkSetLogoutStrategyEvent>
-      get copyWith => __$$NetworkSetLogoutStrategyEventCopyWithImpl<
-          _$NetworkSetLogoutStrategyEvent>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(ChainModel chain) switchChain,
-    required TResult Function() walletConnected,
-    required TResult Function(SwitchChainStrategy? switchChainStrategy)
-        setSwitchChainStrategy,
-    required TResult Function(Future<void> Function()? logoutStrategy)
-        setLogoutStrategy,
-    required TResult Function() logout,
-  }) {
-    return setLogoutStrategy(logoutStrategy);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(ChainModel chain)? switchChain,
-    TResult Function()? walletConnected,
-    TResult Function(SwitchChainStrategy? switchChainStrategy)?
-        setSwitchChainStrategy,
-    TResult Function(Future<void> Function()? logoutStrategy)?
-        setLogoutStrategy,
-    TResult Function()? logout,
-  }) {
-    return setLogoutStrategy?.call(logoutStrategy);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(ChainModel chain)? switchChain,
-    TResult Function()? walletConnected,
-    TResult Function(SwitchChainStrategy? switchChainStrategy)?
-        setSwitchChainStrategy,
-    TResult Function(Future<void> Function()? logoutStrategy)?
-        setLogoutStrategy,
-    TResult Function()? logout,
-    required TResult orElse(),
-  }) {
-    if (setLogoutStrategy != null) {
-      return setLogoutStrategy(logoutStrategy);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(NetworkSwitchChainEvent value) switchChain,
-    required TResult Function(NetworkWalletConnectedEvent value)
-        walletConnected,
-    required TResult Function(NetworkSetSwitchChainStrategyEvent value)
-        setSwitchChainStrategy,
-    required TResult Function(NetworkSetLogoutStrategyEvent value)
-        setLogoutStrategy,
-    required TResult Function(NetworkLogoutEvent value) logout,
-  }) {
-    return setLogoutStrategy(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NetworkSwitchChainEvent value)? switchChain,
-    TResult Function(NetworkWalletConnectedEvent value)? walletConnected,
-    TResult Function(NetworkSetSwitchChainStrategyEvent value)?
-        setSwitchChainStrategy,
-    TResult Function(NetworkSetLogoutStrategyEvent value)? setLogoutStrategy,
-    TResult Function(NetworkLogoutEvent value)? logout,
-  }) {
-    return setLogoutStrategy?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(NetworkSwitchChainEvent value)? switchChain,
-    TResult Function(NetworkWalletConnectedEvent value)? walletConnected,
-    TResult Function(NetworkSetSwitchChainStrategyEvent value)?
-        setSwitchChainStrategy,
-    TResult Function(NetworkSetLogoutStrategyEvent value)? setLogoutStrategy,
-    TResult Function(NetworkLogoutEvent value)? logout,
-    required TResult orElse(),
-  }) {
-    if (setLogoutStrategy != null) {
-      return setLogoutStrategy(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class NetworkSetLogoutStrategyEvent implements NetworkEvent {
-  factory NetworkSetLogoutStrategyEvent(
-          final Future<void> Function()? logoutStrategy) =
-      _$NetworkSetLogoutStrategyEvent;
-
-  Future<void> Function()? get logoutStrategy;
-  @JsonKey(ignore: true)
-  _$$NetworkSetLogoutStrategyEventCopyWith<_$NetworkSetLogoutStrategyEvent>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -801,8 +592,6 @@ class _$NetworkLogoutEvent implements NetworkLogoutEvent {
     required TResult Function() walletConnected,
     required TResult Function(SwitchChainStrategy? switchChainStrategy)
         setSwitchChainStrategy,
-    required TResult Function(Future<void> Function()? logoutStrategy)
-        setLogoutStrategy,
     required TResult Function() logout,
   }) {
     return logout();
@@ -815,8 +604,6 @@ class _$NetworkLogoutEvent implements NetworkLogoutEvent {
     TResult Function()? walletConnected,
     TResult Function(SwitchChainStrategy? switchChainStrategy)?
         setSwitchChainStrategy,
-    TResult Function(Future<void> Function()? logoutStrategy)?
-        setLogoutStrategy,
     TResult Function()? logout,
   }) {
     return logout?.call();
@@ -829,8 +616,6 @@ class _$NetworkLogoutEvent implements NetworkLogoutEvent {
     TResult Function()? walletConnected,
     TResult Function(SwitchChainStrategy? switchChainStrategy)?
         setSwitchChainStrategy,
-    TResult Function(Future<void> Function()? logoutStrategy)?
-        setLogoutStrategy,
     TResult Function()? logout,
     required TResult orElse(),
   }) {
@@ -848,8 +633,6 @@ class _$NetworkLogoutEvent implements NetworkLogoutEvent {
         walletConnected,
     required TResult Function(NetworkSetSwitchChainStrategyEvent value)
         setSwitchChainStrategy,
-    required TResult Function(NetworkSetLogoutStrategyEvent value)
-        setLogoutStrategy,
     required TResult Function(NetworkLogoutEvent value) logout,
   }) {
     return logout(this);
@@ -862,7 +645,6 @@ class _$NetworkLogoutEvent implements NetworkLogoutEvent {
     TResult Function(NetworkWalletConnectedEvent value)? walletConnected,
     TResult Function(NetworkSetSwitchChainStrategyEvent value)?
         setSwitchChainStrategy,
-    TResult Function(NetworkSetLogoutStrategyEvent value)? setLogoutStrategy,
     TResult Function(NetworkLogoutEvent value)? logout,
   }) {
     return logout?.call(this);
@@ -875,7 +657,6 @@ class _$NetworkLogoutEvent implements NetworkLogoutEvent {
     TResult Function(NetworkWalletConnectedEvent value)? walletConnected,
     TResult Function(NetworkSetSwitchChainStrategyEvent value)?
         setSwitchChainStrategy,
-    TResult Function(NetworkSetLogoutStrategyEvent value)? setLogoutStrategy,
     TResult Function(NetworkLogoutEvent value)? logout,
     required TResult orElse(),
   }) {
@@ -896,8 +677,6 @@ mixin _$NetworkState {
   bool get hasWalletConnection => throw _privateConstructorUsedError;
   SwitchChainStrategy? get switchChainStrategy =>
       throw _privateConstructorUsedError;
-  Future<void> Function()? get logoutStrategy =>
-      throw _privateConstructorUsedError;
   bool get switchChainRejected => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -914,7 +693,6 @@ abstract class $NetworkStateCopyWith<$Res> {
       {ChainModel currentChain,
       bool hasWalletConnection,
       SwitchChainStrategy? switchChainStrategy,
-      Future<void> Function()? logoutStrategy,
       bool switchChainRejected});
 
   $ChainModelCopyWith<$Res> get currentChain;
@@ -933,7 +711,6 @@ class _$NetworkStateCopyWithImpl<$Res> implements $NetworkStateCopyWith<$Res> {
     Object? currentChain = freezed,
     Object? hasWalletConnection = freezed,
     Object? switchChainStrategy = freezed,
-    Object? logoutStrategy = freezed,
     Object? switchChainRejected = freezed,
   }) {
     return _then(_value.copyWith(
@@ -949,10 +726,6 @@ class _$NetworkStateCopyWithImpl<$Res> implements $NetworkStateCopyWith<$Res> {
           ? _value.switchChainStrategy
           : switchChainStrategy // ignore: cast_nullable_to_non_nullable
               as SwitchChainStrategy?,
-      logoutStrategy: logoutStrategy == freezed
-          ? _value.logoutStrategy
-          : logoutStrategy // ignore: cast_nullable_to_non_nullable
-              as Future<void> Function()?,
       switchChainRejected: switchChainRejected == freezed
           ? _value.switchChainRejected
           : switchChainRejected // ignore: cast_nullable_to_non_nullable
@@ -979,7 +752,6 @@ abstract class _$$_NetworkStateCopyWith<$Res>
       {ChainModel currentChain,
       bool hasWalletConnection,
       SwitchChainStrategy? switchChainStrategy,
-      Future<void> Function()? logoutStrategy,
       bool switchChainRejected});
 
   @override
@@ -1002,7 +774,6 @@ class __$$_NetworkStateCopyWithImpl<$Res>
     Object? currentChain = freezed,
     Object? hasWalletConnection = freezed,
     Object? switchChainStrategy = freezed,
-    Object? logoutStrategy = freezed,
     Object? switchChainRejected = freezed,
   }) {
     return _then(_$_NetworkState(
@@ -1018,10 +789,6 @@ class __$$_NetworkStateCopyWithImpl<$Res>
           ? _value.switchChainStrategy
           : switchChainStrategy // ignore: cast_nullable_to_non_nullable
               as SwitchChainStrategy?,
-      logoutStrategy: logoutStrategy == freezed
-          ? _value.logoutStrategy
-          : logoutStrategy // ignore: cast_nullable_to_non_nullable
-              as Future<void> Function()?,
       switchChainRejected: switchChainRejected == freezed
           ? _value.switchChainRejected
           : switchChainRejected // ignore: cast_nullable_to_non_nullable
@@ -1037,7 +804,6 @@ class _$_NetworkState implements _NetworkState {
       {required this.currentChain,
       this.hasWalletConnection = false,
       this.switchChainStrategy,
-      this.logoutStrategy,
       this.switchChainRejected = false});
 
   @override
@@ -1048,14 +814,12 @@ class _$_NetworkState implements _NetworkState {
   @override
   final SwitchChainStrategy? switchChainStrategy;
   @override
-  final Future<void> Function()? logoutStrategy;
-  @override
   @JsonKey()
   final bool switchChainRejected;
 
   @override
   String toString() {
-    return 'NetworkState(currentChain: $currentChain, hasWalletConnection: $hasWalletConnection, switchChainStrategy: $switchChainStrategy, logoutStrategy: $logoutStrategy, switchChainRejected: $switchChainRejected)';
+    return 'NetworkState(currentChain: $currentChain, hasWalletConnection: $hasWalletConnection, switchChainStrategy: $switchChainStrategy, switchChainRejected: $switchChainRejected)';
   }
 
   @override
@@ -1069,8 +833,6 @@ class _$_NetworkState implements _NetworkState {
                 .equals(other.hasWalletConnection, hasWalletConnection) &&
             const DeepCollectionEquality()
                 .equals(other.switchChainStrategy, switchChainStrategy) &&
-            (identical(other.logoutStrategy, logoutStrategy) ||
-                other.logoutStrategy == logoutStrategy) &&
             const DeepCollectionEquality()
                 .equals(other.switchChainRejected, switchChainRejected));
   }
@@ -1081,7 +843,6 @@ class _$_NetworkState implements _NetworkState {
       const DeepCollectionEquality().hash(currentChain),
       const DeepCollectionEquality().hash(hasWalletConnection),
       const DeepCollectionEquality().hash(switchChainStrategy),
-      logoutStrategy,
       const DeepCollectionEquality().hash(switchChainRejected));
 
   @JsonKey(ignore: true)
@@ -1095,7 +856,6 @@ abstract class _NetworkState implements NetworkState {
       {required final ChainModel currentChain,
       final bool hasWalletConnection,
       final SwitchChainStrategy? switchChainStrategy,
-      final Future<void> Function()? logoutStrategy,
       final bool switchChainRejected}) = _$_NetworkState;
 
   @override
@@ -1104,8 +864,6 @@ abstract class _NetworkState implements NetworkState {
   bool get hasWalletConnection;
   @override
   SwitchChainStrategy? get switchChainStrategy;
-  @override
-  Future<void> Function()? get logoutStrategy;
   @override
   bool get switchChainRejected;
   @override
