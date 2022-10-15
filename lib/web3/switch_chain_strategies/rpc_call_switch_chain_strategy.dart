@@ -21,21 +21,23 @@ class RpcCallSwitchChainStrategy implements SwitchChainStrategy {
       ]);
       return response.result == null;
     } on RPCError catch (e) {
-      if(e.errorCode != chainNotExistsErrorCode) rethrow;
-
-      final response = await rpcService.call('wallet_addEthereumChain', [
-        {
-          'chainId': chain.getHexId(),
-          'chainName': chain.name,
-          'rpcUrls': [chain.rpcUrl],
-          'nativeCurrency': {
-            'symbol': chain.nativeCurrencySymbol,
-            'decimals': 18
-          },
-          'blockExplorerUrls': [chain.blockExplorerUrls],
-        }
-      ]);
-      return response.result == null;
+      try {
+        final response = await rpcService.call('wallet_addEthereumChain', [
+          {
+            'chainId': chain.getHexId(),
+            'chainName': chain.name,
+            'rpcUrls': [chain.rpcUrl],
+            'nativeCurrency': {
+              'symbol': chain.nativeCurrencySymbol,
+              'decimals': 18
+            },
+            'blockExplorerUrls': [chain.blockExplorerUrls],
+          }
+        ]);
+        return response.result == null;
+      } catch(e) {
+        rethrow;
+      }
     }
   }
 }

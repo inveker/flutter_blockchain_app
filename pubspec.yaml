@@ -53,10 +53,10 @@ dependencies:
   web3dart_walletconnect:
     path:
       ../web3dart_walletconnect
-  web3_cross_client:
-    path:
-      ../web3_cross_client
   walletconnect_dart:
+    git:
+      url: https://github.com/RootSoft/walletconnect-dart-sdk.git
+      ref: feature/string-chainid
   qr_flutter:
   url_launcher:
 

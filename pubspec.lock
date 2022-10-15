@@ -717,10 +717,12 @@ packages:
   walletconnect_dart:
     dependency: "direct main"
     description:
-      name: walletconnect_dart
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.0.11"
+      path: "."
+      ref: "feature/string-chainid"
+      resolved-ref: "6122ea30e2ec233e3f4c73a1bfbcb8eb96522fbe"
+      url: "https://github.com/RootSoft/walletconnect-dart-sdk.git"
+    source: git
+    version: "0.0.7"
   watcher:
     dependency: transitive
     description:
@@ -734,13 +736,6 @@ packages:
       name: web3_browser
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.1"
-  web3_cross_client:
-    dependency: "direct main"
-    description:
-      path: "../web3_cross_client"
-      relative: true
-    source: path
     version: "0.0.1"
   web3_ethereum:
     dependency: "direct main"
