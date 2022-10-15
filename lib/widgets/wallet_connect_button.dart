@@ -6,6 +6,7 @@ import 'package:flutter_blockchain_app/bloc/walletconnect_provider/walletconnect
 import 'package:flutter_blockchain_app/models/chain/chain_model.dart';
 import 'package:flutter_blockchain_app/repositories/chains_repository.dart';
 import 'package:flutter_blockchain_app/web3/provider_builders/walletconnect/walletconnect_provider_builder.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 
 class WalletConnectButton extends StatelessWidget {
   const WalletConnectButton({Key? key}) : super(key: key);
@@ -22,8 +23,8 @@ class WalletConnectButton extends StatelessWidget {
               final browserExtensionProviderIsSupported = context.select<BrowserExtensionProviderBloc, bool>((bloc) => bloc.state.isSupported);
               return Center(
                 child: Container(
-                  width: 300,
-                  height: 300,
+                  width: 600,
+                  height: 600,
                   color: Colors.white,
                   child: Row(
                     children: [
@@ -52,8 +53,8 @@ class _BrowserExtensionProviderButton extends StatelessWidget {
             context.read<BrowserExtensionProviderBloc>().add(BrowserExtensionProviderEvent.connect());
           },
           child: Container(
-            width: 80,
-            height: 80,
+            width: 280,
+            height: 280,
             color: Colors.orange,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -77,13 +78,23 @@ class _WalletConnectProviderButton extends StatelessWidget {
         context.read<WalletConnectProviderBloc>().add(WalletConnectProviderEvent.connect());
       },
       child: Container(
-        width: 80,
-        height: 80,
+        width: 280,
+        height: 280,
         color: Colors.blueAccent,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('WalletConnect'),
+            BlocBuilder<WalletConnectProviderBloc, WalletConnectProviderState>(
+              buildWhen: (p, n) => p.displayUri != n.displayUri,
+              builder: (context, state) {
+                if(state.displayUri != null) {
+                  return QrImage(data: state.displayUri!, size: 200,);
+                } else {
+                  return SizedBox();
+                }
+              },
+            ),
           ],
         ),
       ),

@@ -18,6 +18,8 @@ class WalletConnectProviderBloc extends HydratedBloc<WalletConnectProviderEvent,
   WalletConnectProviderBloc() : super(WalletConnectProviderState()) {
     _walletConnectProvider ??= WalletConnectProviderBuilder();
     on<WalletConnectProviderConnectEvent>(_connect);
+    on<WalletConnectProviderRestoreEvent>(_restore);
+    on<WalletConnectProviderResetEvent>(_reset);
     on<WalletConnectProviderSetDisplayUriEvent>(_setDisplayUri);
   }
 
@@ -40,26 +42,39 @@ class WalletConnectProviderBloc extends HydratedBloc<WalletConnectProviderEvent,
     ));
   }
 
-  @override
-  WalletConnectProviderState? fromJson(Map<String, dynamic> json) {
-    final session = WalletConnectSession.fromJson(
+  Future<void> _restore(WalletConnectProviderRestoreEvent event, Emitter<WalletConnectProviderState> emit) async {
+    final json = event.json;
+
+    final session = json['session'] == null ? null : WalletConnectSession.fromJson(
       json['session'],
     );
-    _walletConnectProvider = WalletConnectProviderBuilder.fromSession(
-      session: session,
-    );
 
-    return WalletConnectProviderState(
-      isConnected: json['isConnected'],
-      rpcService: _walletConnectProvider!.buildRpcService(),
-      credentials: _walletConnectProvider!.restoreCredentials(),
-    );
+    if(session != null) {
+      _walletConnectProvider = WalletConnectProviderBuilder.fromSession(
+        session: session,
+      );
+
+      emit(WalletConnectProviderState(
+        isConnected: json['isConnected'],
+        rpcService: _walletConnectProvider!.buildRpcService(),
+        credentials: _walletConnectProvider!.restoreCredentials(),
+      ));
+    }
+  }
+
+  Future<void> _reset(WalletConnectProviderResetEvent event, Emitter<WalletConnectProviderState> emit) async {
+    emit(WalletConnectProviderState());
+  }
+
+  @override
+  WalletConnectProviderState? fromJson(Map<String, dynamic> json) {
+    Future(() => add(WalletConnectProviderEvent.restore(json)));
   }
 
   @override
   Map<String, dynamic>? toJson(WalletConnectProviderState state) {
     return {
-      'session': _walletConnectProvider!.session.toJson(),
+      'session': _walletConnectProvider?.session.toJson(),
       'isConnected': state.isConnected,
     };
   }

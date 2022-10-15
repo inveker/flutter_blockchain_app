@@ -19,16 +19,22 @@ mixin _$BrowserExtensionProviderEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() connect,
+    required TResult Function(Map<String, dynamic> json) restore,
+    required TResult Function() reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? connect,
+    TResult Function(Map<String, dynamic> json)? restore,
+    TResult Function()? reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? connect,
+    TResult Function(Map<String, dynamic> json)? restore,
+    TResult Function()? reset,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -36,16 +42,23 @@ mixin _$BrowserExtensionProviderEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(BrowserExtensionProviderConnectEvent value)
         connect,
+    required TResult Function(BrowserExtensionProviderRestoreEvent value)
+        restore,
+    required TResult Function(BrowserExtensionProviderResetEvent value) reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(BrowserExtensionProviderConnectEvent value)? connect,
+    TResult Function(BrowserExtensionProviderRestoreEvent value)? restore,
+    TResult Function(BrowserExtensionProviderResetEvent value)? reset,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BrowserExtensionProviderConnectEvent value)? connect,
+    TResult Function(BrowserExtensionProviderRestoreEvent value)? restore,
+    TResult Function(BrowserExtensionProviderResetEvent value)? reset,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -117,6 +130,8 @@ class _$BrowserExtensionProviderConnectEvent
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() connect,
+    required TResult Function(Map<String, dynamic> json) restore,
+    required TResult Function() reset,
   }) {
     return connect();
   }
@@ -125,6 +140,8 @@ class _$BrowserExtensionProviderConnectEvent
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? connect,
+    TResult Function(Map<String, dynamic> json)? restore,
+    TResult Function()? reset,
   }) {
     return connect?.call();
   }
@@ -133,6 +150,8 @@ class _$BrowserExtensionProviderConnectEvent
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? connect,
+    TResult Function(Map<String, dynamic> json)? restore,
+    TResult Function()? reset,
     required TResult orElse(),
   }) {
     if (connect != null) {
@@ -146,6 +165,9 @@ class _$BrowserExtensionProviderConnectEvent
   TResult map<TResult extends Object?>({
     required TResult Function(BrowserExtensionProviderConnectEvent value)
         connect,
+    required TResult Function(BrowserExtensionProviderRestoreEvent value)
+        restore,
+    required TResult Function(BrowserExtensionProviderResetEvent value) reset,
   }) {
     return connect(this);
   }
@@ -154,6 +176,8 @@ class _$BrowserExtensionProviderConnectEvent
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(BrowserExtensionProviderConnectEvent value)? connect,
+    TResult Function(BrowserExtensionProviderRestoreEvent value)? restore,
+    TResult Function(BrowserExtensionProviderResetEvent value)? reset,
   }) {
     return connect?.call(this);
   }
@@ -162,6 +186,8 @@ class _$BrowserExtensionProviderConnectEvent
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(BrowserExtensionProviderConnectEvent value)? connect,
+    TResult Function(BrowserExtensionProviderRestoreEvent value)? restore,
+    TResult Function(BrowserExtensionProviderResetEvent value)? reset,
     required TResult orElse(),
   }) {
     if (connect != null) {
@@ -175,6 +201,283 @@ abstract class BrowserExtensionProviderConnectEvent
     implements BrowserExtensionProviderEvent {
   factory BrowserExtensionProviderConnectEvent() =
       _$BrowserExtensionProviderConnectEvent;
+}
+
+/// @nodoc
+abstract class _$$BrowserExtensionProviderRestoreEventCopyWith<$Res> {
+  factory _$$BrowserExtensionProviderRestoreEventCopyWith(
+          _$BrowserExtensionProviderRestoreEvent value,
+          $Res Function(_$BrowserExtensionProviderRestoreEvent) then) =
+      __$$BrowserExtensionProviderRestoreEventCopyWithImpl<$Res>;
+  $Res call({Map<String, dynamic> json});
+}
+
+/// @nodoc
+class __$$BrowserExtensionProviderRestoreEventCopyWithImpl<$Res>
+    extends _$BrowserExtensionProviderEventCopyWithImpl<$Res>
+    implements _$$BrowserExtensionProviderRestoreEventCopyWith<$Res> {
+  __$$BrowserExtensionProviderRestoreEventCopyWithImpl(
+      _$BrowserExtensionProviderRestoreEvent _value,
+      $Res Function(_$BrowserExtensionProviderRestoreEvent) _then)
+      : super(
+            _value, (v) => _then(v as _$BrowserExtensionProviderRestoreEvent));
+
+  @override
+  _$BrowserExtensionProviderRestoreEvent get _value =>
+      super._value as _$BrowserExtensionProviderRestoreEvent;
+
+  @override
+  $Res call({
+    Object? json = freezed,
+  }) {
+    return _then(_$BrowserExtensionProviderRestoreEvent(
+      json == freezed
+          ? _value._json
+          : json // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$BrowserExtensionProviderRestoreEvent
+    implements BrowserExtensionProviderRestoreEvent {
+  _$BrowserExtensionProviderRestoreEvent(final Map<String, dynamic> json)
+      : _json = json;
+
+  final Map<String, dynamic> _json;
+  @override
+  Map<String, dynamic> get json {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_json);
+  }
+
+  @override
+  String toString() {
+    return 'BrowserExtensionProviderEvent.restore(json: $json)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BrowserExtensionProviderRestoreEvent &&
+            const DeepCollectionEquality().equals(other._json, _json));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_json));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$BrowserExtensionProviderRestoreEventCopyWith<
+          _$BrowserExtensionProviderRestoreEvent>
+      get copyWith => __$$BrowserExtensionProviderRestoreEventCopyWithImpl<
+          _$BrowserExtensionProviderRestoreEvent>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() connect,
+    required TResult Function(Map<String, dynamic> json) restore,
+    required TResult Function() reset,
+  }) {
+    return restore(json);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? connect,
+    TResult Function(Map<String, dynamic> json)? restore,
+    TResult Function()? reset,
+  }) {
+    return restore?.call(json);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? connect,
+    TResult Function(Map<String, dynamic> json)? restore,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (restore != null) {
+      return restore(json);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BrowserExtensionProviderConnectEvent value)
+        connect,
+    required TResult Function(BrowserExtensionProviderRestoreEvent value)
+        restore,
+    required TResult Function(BrowserExtensionProviderResetEvent value) reset,
+  }) {
+    return restore(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(BrowserExtensionProviderConnectEvent value)? connect,
+    TResult Function(BrowserExtensionProviderRestoreEvent value)? restore,
+    TResult Function(BrowserExtensionProviderResetEvent value)? reset,
+  }) {
+    return restore?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BrowserExtensionProviderConnectEvent value)? connect,
+    TResult Function(BrowserExtensionProviderRestoreEvent value)? restore,
+    TResult Function(BrowserExtensionProviderResetEvent value)? reset,
+    required TResult orElse(),
+  }) {
+    if (restore != null) {
+      return restore(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BrowserExtensionProviderRestoreEvent
+    implements BrowserExtensionProviderEvent {
+  factory BrowserExtensionProviderRestoreEvent(
+      final Map<String, dynamic> json) = _$BrowserExtensionProviderRestoreEvent;
+
+  Map<String, dynamic> get json;
+  @JsonKey(ignore: true)
+  _$$BrowserExtensionProviderRestoreEventCopyWith<
+          _$BrowserExtensionProviderRestoreEvent>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$BrowserExtensionProviderResetEventCopyWith<$Res> {
+  factory _$$BrowserExtensionProviderResetEventCopyWith(
+          _$BrowserExtensionProviderResetEvent value,
+          $Res Function(_$BrowserExtensionProviderResetEvent) then) =
+      __$$BrowserExtensionProviderResetEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$BrowserExtensionProviderResetEventCopyWithImpl<$Res>
+    extends _$BrowserExtensionProviderEventCopyWithImpl<$Res>
+    implements _$$BrowserExtensionProviderResetEventCopyWith<$Res> {
+  __$$BrowserExtensionProviderResetEventCopyWithImpl(
+      _$BrowserExtensionProviderResetEvent _value,
+      $Res Function(_$BrowserExtensionProviderResetEvent) _then)
+      : super(_value, (v) => _then(v as _$BrowserExtensionProviderResetEvent));
+
+  @override
+  _$BrowserExtensionProviderResetEvent get _value =>
+      super._value as _$BrowserExtensionProviderResetEvent;
+}
+
+/// @nodoc
+
+class _$BrowserExtensionProviderResetEvent
+    implements BrowserExtensionProviderResetEvent {
+  _$BrowserExtensionProviderResetEvent();
+
+  @override
+  String toString() {
+    return 'BrowserExtensionProviderEvent.reset()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BrowserExtensionProviderResetEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() connect,
+    required TResult Function(Map<String, dynamic> json) restore,
+    required TResult Function() reset,
+  }) {
+    return reset();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? connect,
+    TResult Function(Map<String, dynamic> json)? restore,
+    TResult Function()? reset,
+  }) {
+    return reset?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? connect,
+    TResult Function(Map<String, dynamic> json)? restore,
+    TResult Function()? reset,
+    required TResult orElse(),
+  }) {
+    if (reset != null) {
+      return reset();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(BrowserExtensionProviderConnectEvent value)
+        connect,
+    required TResult Function(BrowserExtensionProviderRestoreEvent value)
+        restore,
+    required TResult Function(BrowserExtensionProviderResetEvent value) reset,
+  }) {
+    return reset(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(BrowserExtensionProviderConnectEvent value)? connect,
+    TResult Function(BrowserExtensionProviderRestoreEvent value)? restore,
+    TResult Function(BrowserExtensionProviderResetEvent value)? reset,
+  }) {
+    return reset?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(BrowserExtensionProviderConnectEvent value)? connect,
+    TResult Function(BrowserExtensionProviderRestoreEvent value)? restore,
+    TResult Function(BrowserExtensionProviderResetEvent value)? reset,
+    required TResult orElse(),
+  }) {
+    if (reset != null) {
+      return reset(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BrowserExtensionProviderResetEvent
+    implements BrowserExtensionProviderEvent {
+  factory BrowserExtensionProviderResetEvent() =
+      _$BrowserExtensionProviderResetEvent;
 }
 
 /// @nodoc

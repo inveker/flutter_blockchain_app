@@ -19,18 +19,24 @@ mixin _$WalletConnectProviderEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() connect,
+    required TResult Function(Map<String, dynamic> json) restore,
+    required TResult Function() reset,
     required TResult Function(String? displayUri) setDisplayUri,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? connect,
+    TResult Function(Map<String, dynamic> json)? restore,
+    TResult Function()? reset,
     TResult Function(String? displayUri)? setDisplayUri,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? connect,
+    TResult Function(Map<String, dynamic> json)? restore,
+    TResult Function()? reset,
     TResult Function(String? displayUri)? setDisplayUri,
     required TResult orElse(),
   }) =>
@@ -38,6 +44,8 @@ mixin _$WalletConnectProviderEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(WalletConnectProviderConnectEvent value) connect,
+    required TResult Function(WalletConnectProviderRestoreEvent value) restore,
+    required TResult Function(WalletConnectProviderResetEvent value) reset,
     required TResult Function(WalletConnectProviderSetDisplayUriEvent value)
         setDisplayUri,
   }) =>
@@ -45,6 +53,8 @@ mixin _$WalletConnectProviderEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(WalletConnectProviderConnectEvent value)? connect,
+    TResult Function(WalletConnectProviderRestoreEvent value)? restore,
+    TResult Function(WalletConnectProviderResetEvent value)? reset,
     TResult Function(WalletConnectProviderSetDisplayUriEvent value)?
         setDisplayUri,
   }) =>
@@ -52,6 +62,8 @@ mixin _$WalletConnectProviderEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(WalletConnectProviderConnectEvent value)? connect,
+    TResult Function(WalletConnectProviderRestoreEvent value)? restore,
+    TResult Function(WalletConnectProviderResetEvent value)? reset,
     TResult Function(WalletConnectProviderSetDisplayUriEvent value)?
         setDisplayUri,
     required TResult orElse(),
@@ -123,6 +135,8 @@ class _$WalletConnectProviderConnectEvent
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() connect,
+    required TResult Function(Map<String, dynamic> json) restore,
+    required TResult Function() reset,
     required TResult Function(String? displayUri) setDisplayUri,
   }) {
     return connect();
@@ -132,6 +146,8 @@ class _$WalletConnectProviderConnectEvent
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? connect,
+    TResult Function(Map<String, dynamic> json)? restore,
+    TResult Function()? reset,
     TResult Function(String? displayUri)? setDisplayUri,
   }) {
     return connect?.call();
@@ -141,6 +157,8 @@ class _$WalletConnectProviderConnectEvent
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? connect,
+    TResult Function(Map<String, dynamic> json)? restore,
+    TResult Function()? reset,
     TResult Function(String? displayUri)? setDisplayUri,
     required TResult orElse(),
   }) {
@@ -154,6 +172,8 @@ class _$WalletConnectProviderConnectEvent
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(WalletConnectProviderConnectEvent value) connect,
+    required TResult Function(WalletConnectProviderRestoreEvent value) restore,
+    required TResult Function(WalletConnectProviderResetEvent value) reset,
     required TResult Function(WalletConnectProviderSetDisplayUriEvent value)
         setDisplayUri,
   }) {
@@ -164,6 +184,8 @@ class _$WalletConnectProviderConnectEvent
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(WalletConnectProviderConnectEvent value)? connect,
+    TResult Function(WalletConnectProviderRestoreEvent value)? restore,
+    TResult Function(WalletConnectProviderResetEvent value)? reset,
     TResult Function(WalletConnectProviderSetDisplayUriEvent value)?
         setDisplayUri,
   }) {
@@ -174,6 +196,8 @@ class _$WalletConnectProviderConnectEvent
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(WalletConnectProviderConnectEvent value)? connect,
+    TResult Function(WalletConnectProviderRestoreEvent value)? restore,
+    TResult Function(WalletConnectProviderResetEvent value)? reset,
     TResult Function(WalletConnectProviderSetDisplayUriEvent value)?
         setDisplayUri,
     required TResult orElse(),
@@ -189,6 +213,295 @@ abstract class WalletConnectProviderConnectEvent
     implements WalletConnectProviderEvent {
   factory WalletConnectProviderConnectEvent() =
       _$WalletConnectProviderConnectEvent;
+}
+
+/// @nodoc
+abstract class _$$WalletConnectProviderRestoreEventCopyWith<$Res> {
+  factory _$$WalletConnectProviderRestoreEventCopyWith(
+          _$WalletConnectProviderRestoreEvent value,
+          $Res Function(_$WalletConnectProviderRestoreEvent) then) =
+      __$$WalletConnectProviderRestoreEventCopyWithImpl<$Res>;
+  $Res call({Map<String, dynamic> json});
+}
+
+/// @nodoc
+class __$$WalletConnectProviderRestoreEventCopyWithImpl<$Res>
+    extends _$WalletConnectProviderEventCopyWithImpl<$Res>
+    implements _$$WalletConnectProviderRestoreEventCopyWith<$Res> {
+  __$$WalletConnectProviderRestoreEventCopyWithImpl(
+      _$WalletConnectProviderRestoreEvent _value,
+      $Res Function(_$WalletConnectProviderRestoreEvent) _then)
+      : super(_value, (v) => _then(v as _$WalletConnectProviderRestoreEvent));
+
+  @override
+  _$WalletConnectProviderRestoreEvent get _value =>
+      super._value as _$WalletConnectProviderRestoreEvent;
+
+  @override
+  $Res call({
+    Object? json = freezed,
+  }) {
+    return _then(_$WalletConnectProviderRestoreEvent(
+      json == freezed
+          ? _value._json
+          : json // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$WalletConnectProviderRestoreEvent
+    implements WalletConnectProviderRestoreEvent {
+  _$WalletConnectProviderRestoreEvent(final Map<String, dynamic> json)
+      : _json = json;
+
+  final Map<String, dynamic> _json;
+  @override
+  Map<String, dynamic> get json {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_json);
+  }
+
+  @override
+  String toString() {
+    return 'WalletConnectProviderEvent.restore(json: $json)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$WalletConnectProviderRestoreEvent &&
+            const DeepCollectionEquality().equals(other._json, _json));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_json));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$WalletConnectProviderRestoreEventCopyWith<
+          _$WalletConnectProviderRestoreEvent>
+      get copyWith => __$$WalletConnectProviderRestoreEventCopyWithImpl<
+          _$WalletConnectProviderRestoreEvent>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() connect,
+    required TResult Function(Map<String, dynamic> json) restore,
+    required TResult Function() reset,
+    required TResult Function(String? displayUri) setDisplayUri,
+  }) {
+    return restore(json);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? connect,
+    TResult Function(Map<String, dynamic> json)? restore,
+    TResult Function()? reset,
+    TResult Function(String? displayUri)? setDisplayUri,
+  }) {
+    return restore?.call(json);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? connect,
+    TResult Function(Map<String, dynamic> json)? restore,
+    TResult Function()? reset,
+    TResult Function(String? displayUri)? setDisplayUri,
+    required TResult orElse(),
+  }) {
+    if (restore != null) {
+      return restore(json);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(WalletConnectProviderConnectEvent value) connect,
+    required TResult Function(WalletConnectProviderRestoreEvent value) restore,
+    required TResult Function(WalletConnectProviderResetEvent value) reset,
+    required TResult Function(WalletConnectProviderSetDisplayUriEvent value)
+        setDisplayUri,
+  }) {
+    return restore(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(WalletConnectProviderConnectEvent value)? connect,
+    TResult Function(WalletConnectProviderRestoreEvent value)? restore,
+    TResult Function(WalletConnectProviderResetEvent value)? reset,
+    TResult Function(WalletConnectProviderSetDisplayUriEvent value)?
+        setDisplayUri,
+  }) {
+    return restore?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(WalletConnectProviderConnectEvent value)? connect,
+    TResult Function(WalletConnectProviderRestoreEvent value)? restore,
+    TResult Function(WalletConnectProviderResetEvent value)? reset,
+    TResult Function(WalletConnectProviderSetDisplayUriEvent value)?
+        setDisplayUri,
+    required TResult orElse(),
+  }) {
+    if (restore != null) {
+      return restore(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class WalletConnectProviderRestoreEvent
+    implements WalletConnectProviderEvent {
+  factory WalletConnectProviderRestoreEvent(final Map<String, dynamic> json) =
+      _$WalletConnectProviderRestoreEvent;
+
+  Map<String, dynamic> get json;
+  @JsonKey(ignore: true)
+  _$$WalletConnectProviderRestoreEventCopyWith<
+          _$WalletConnectProviderRestoreEvent>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$WalletConnectProviderResetEventCopyWith<$Res> {
+  factory _$$WalletConnectProviderResetEventCopyWith(
+          _$WalletConnectProviderResetEvent value,
+          $Res Function(_$WalletConnectProviderResetEvent) then) =
+      __$$WalletConnectProviderResetEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$WalletConnectProviderResetEventCopyWithImpl<$Res>
+    extends _$WalletConnectProviderEventCopyWithImpl<$Res>
+    implements _$$WalletConnectProviderResetEventCopyWith<$Res> {
+  __$$WalletConnectProviderResetEventCopyWithImpl(
+      _$WalletConnectProviderResetEvent _value,
+      $Res Function(_$WalletConnectProviderResetEvent) _then)
+      : super(_value, (v) => _then(v as _$WalletConnectProviderResetEvent));
+
+  @override
+  _$WalletConnectProviderResetEvent get _value =>
+      super._value as _$WalletConnectProviderResetEvent;
+}
+
+/// @nodoc
+
+class _$WalletConnectProviderResetEvent
+    implements WalletConnectProviderResetEvent {
+  _$WalletConnectProviderResetEvent();
+
+  @override
+  String toString() {
+    return 'WalletConnectProviderEvent.reset()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$WalletConnectProviderResetEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() connect,
+    required TResult Function(Map<String, dynamic> json) restore,
+    required TResult Function() reset,
+    required TResult Function(String? displayUri) setDisplayUri,
+  }) {
+    return reset();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? connect,
+    TResult Function(Map<String, dynamic> json)? restore,
+    TResult Function()? reset,
+    TResult Function(String? displayUri)? setDisplayUri,
+  }) {
+    return reset?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? connect,
+    TResult Function(Map<String, dynamic> json)? restore,
+    TResult Function()? reset,
+    TResult Function(String? displayUri)? setDisplayUri,
+    required TResult orElse(),
+  }) {
+    if (reset != null) {
+      return reset();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(WalletConnectProviderConnectEvent value) connect,
+    required TResult Function(WalletConnectProviderRestoreEvent value) restore,
+    required TResult Function(WalletConnectProviderResetEvent value) reset,
+    required TResult Function(WalletConnectProviderSetDisplayUriEvent value)
+        setDisplayUri,
+  }) {
+    return reset(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(WalletConnectProviderConnectEvent value)? connect,
+    TResult Function(WalletConnectProviderRestoreEvent value)? restore,
+    TResult Function(WalletConnectProviderResetEvent value)? reset,
+    TResult Function(WalletConnectProviderSetDisplayUriEvent value)?
+        setDisplayUri,
+  }) {
+    return reset?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(WalletConnectProviderConnectEvent value)? connect,
+    TResult Function(WalletConnectProviderRestoreEvent value)? restore,
+    TResult Function(WalletConnectProviderResetEvent value)? reset,
+    TResult Function(WalletConnectProviderSetDisplayUriEvent value)?
+        setDisplayUri,
+    required TResult orElse(),
+  }) {
+    if (reset != null) {
+      return reset(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class WalletConnectProviderResetEvent
+    implements WalletConnectProviderEvent {
+  factory WalletConnectProviderResetEvent() = _$WalletConnectProviderResetEvent;
 }
 
 /// @nodoc
@@ -265,6 +578,8 @@ class _$WalletConnectProviderSetDisplayUriEvent
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() connect,
+    required TResult Function(Map<String, dynamic> json) restore,
+    required TResult Function() reset,
     required TResult Function(String? displayUri) setDisplayUri,
   }) {
     return setDisplayUri(displayUri);
@@ -274,6 +589,8 @@ class _$WalletConnectProviderSetDisplayUriEvent
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? connect,
+    TResult Function(Map<String, dynamic> json)? restore,
+    TResult Function()? reset,
     TResult Function(String? displayUri)? setDisplayUri,
   }) {
     return setDisplayUri?.call(displayUri);
@@ -283,6 +600,8 @@ class _$WalletConnectProviderSetDisplayUriEvent
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? connect,
+    TResult Function(Map<String, dynamic> json)? restore,
+    TResult Function()? reset,
     TResult Function(String? displayUri)? setDisplayUri,
     required TResult orElse(),
   }) {
@@ -296,6 +615,8 @@ class _$WalletConnectProviderSetDisplayUriEvent
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(WalletConnectProviderConnectEvent value) connect,
+    required TResult Function(WalletConnectProviderRestoreEvent value) restore,
+    required TResult Function(WalletConnectProviderResetEvent value) reset,
     required TResult Function(WalletConnectProviderSetDisplayUriEvent value)
         setDisplayUri,
   }) {
@@ -306,6 +627,8 @@ class _$WalletConnectProviderSetDisplayUriEvent
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(WalletConnectProviderConnectEvent value)? connect,
+    TResult Function(WalletConnectProviderRestoreEvent value)? restore,
+    TResult Function(WalletConnectProviderResetEvent value)? reset,
     TResult Function(WalletConnectProviderSetDisplayUriEvent value)?
         setDisplayUri,
   }) {
@@ -316,6 +639,8 @@ class _$WalletConnectProviderSetDisplayUriEvent
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(WalletConnectProviderConnectEvent value)? connect,
+    TResult Function(WalletConnectProviderRestoreEvent value)? restore,
+    TResult Function(WalletConnectProviderResetEvent value)? reset,
     TResult Function(WalletConnectProviderSetDisplayUriEvent value)?
         setDisplayUri,
     required TResult orElse(),

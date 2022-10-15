@@ -11,11 +11,11 @@ class RpcCallSwitchChainStrategy implements SwitchChainStrategy {
 
   @override
   Future<bool> execute(ChainModel chain) async {
-    await rpcService.call('wallet_switchEthereumChain', [
+    final response = await rpcService.call('wallet_switchEthereumChain', [
       {
         'chainId': chain.getHexId(),
       }
     ]);
-    return true;
+    return response.result == null;
   }
 }

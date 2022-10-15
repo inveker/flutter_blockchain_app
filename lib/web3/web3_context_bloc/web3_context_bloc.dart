@@ -24,6 +24,7 @@ class Web3ContextBloc extends StatelessWidget {
       child: MultiBlocListener(
         listeners: [
           NetworkBlocListeners.currentChainChanged(),
+          NetworkBlocListeners.logout(),
           RpcBlocListeners.rpcServiceChanged(),
           BrowserExtensionProviderBlocListeners.isConnectedChanged(),
           WalletConnectProviderBlocListeners.isConnectedChanged(),
