@@ -31,7 +31,7 @@ class WalletConnectProviderBlocListeners {
 
   static BlocListener<WalletConnectProviderBloc, WalletConnectProviderState> rpcServiceChanged() {
     return BlocListener<WalletConnectProviderBloc, WalletConnectProviderState>(
-      listenWhen: (p, n) => p.rpcService != n.rpcService,
+      listenWhen: (p, n) => p.rpcService != n.rpcService && n.rpcService != null,
       listener: (context, state) {
         final rpcBloc = context.read<RpcBloc>();
         rpcBloc.add(RpcEvent.set(state.rpcService));
@@ -41,7 +41,7 @@ class WalletConnectProviderBlocListeners {
 
   static BlocListener<WalletConnectProviderBloc, WalletConnectProviderState> credentialsChanged() {
     return BlocListener<WalletConnectProviderBloc, WalletConnectProviderState>(
-      listenWhen: (p, n) => p.credentials != n.credentials,
+      listenWhen: (p, n) => p.credentials != n.credentials && n.credentials != null,
       listener: (context, state) {
         final credentialsBloc = context.read<CredentialsBloc>();
         credentialsBloc.add(CredentialsEvent.set(state.credentials));

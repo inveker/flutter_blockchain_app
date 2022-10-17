@@ -30,7 +30,7 @@ class BrowserExtensionProviderBlocListeners {
 
   static BlocListener<BrowserExtensionProviderBloc, BrowserExtensionProviderState> rpcServiceChanged() {
     return BlocListener<BrowserExtensionProviderBloc, BrowserExtensionProviderState>(
-      listenWhen: (p, n) => p.rpcService != n.rpcService,
+      listenWhen: (p, n) => p.rpcService != n.rpcService && n.rpcService != null,
       listener: (context, state) {
         final rpcBloc = context.read<RpcBloc>();
         rpcBloc.add(RpcEvent.set(state.rpcService));
@@ -40,7 +40,7 @@ class BrowserExtensionProviderBlocListeners {
 
   static BlocListener<BrowserExtensionProviderBloc, BrowserExtensionProviderState> credentialsChanged() {
     return BlocListener<BrowserExtensionProviderBloc, BrowserExtensionProviderState>(
-      listenWhen: (p, n) => p.credentials != n.credentials,
+      listenWhen: (p, n) => p.credentials != n.credentials && n.credentials != null,
       listener: (context, state) {
         final credentialsBloc = context.read<CredentialsBloc>();
         credentialsBloc.add(CredentialsEvent.set(state.credentials));
