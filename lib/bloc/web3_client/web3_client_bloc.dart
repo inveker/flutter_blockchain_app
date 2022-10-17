@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:flutter_blockchain_app/models/chain/chain_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:web3dart/json_rpc.dart';
 import 'package:web3dart/web3dart.dart';

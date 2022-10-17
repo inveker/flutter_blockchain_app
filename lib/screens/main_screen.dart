@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_blockchain_app/bloc/network/network_bloc.dart';
 import 'package:flutter_blockchain_app/bloc/rpc/rpc_bloc.dart';
+import 'package:flutter_blockchain_app/bloc/wallet_connection/wallet_connection_bloc.dart';
 import 'package:flutter_blockchain_app/widgets/chain_selector.dart';
 import 'package:flutter_blockchain_app/widgets/wallet_connect_button.dart';
 import 'package:flutter_blockchain_app/widgets/wallet_logout_button.dart';
@@ -16,7 +16,7 @@ class MainScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            BlocBuilder<NetworkBloc, NetworkState>(
+            BlocBuilder<WalletConnectionBloc, WalletConnectionState>(
               buildWhen: (p, n) => p.hasWalletConnection != n.hasWalletConnection,
               builder: (context, state) {
                 return Text('Wallet connection: ${state.hasWalletConnection}');
@@ -24,13 +24,13 @@ class MainScreen extends StatelessWidget {
             ),
             WalletConnectButton(),
             ChainSelector(),
-            BlocBuilder<NetworkBloc, NetworkState>(
+            BlocBuilder<WalletConnectionBloc, WalletConnectionState>(
               buildWhen: (p, n) => p.hasWalletConnection != n.hasWalletConnection,
               builder: (context, state) {
                 return state.hasWalletConnection ? WalletLogoutButton() : SizedBox();
               },
             ),
-            BlocBuilder<NetworkBloc, NetworkState>(
+            BlocBuilder<WalletConnectionBloc, WalletConnectionState>(
               buildWhen: (p, n) => p.hasWalletConnection != n.hasWalletConnection,
               builder: (context, state) {
                 if(state.hasWalletConnection) {

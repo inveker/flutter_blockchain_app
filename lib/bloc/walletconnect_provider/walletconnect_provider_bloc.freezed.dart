@@ -22,6 +22,8 @@ mixin _$WalletConnectProviderEvent {
     required TResult Function(Map<String, dynamic> json) restore,
     required TResult Function() reset,
     required TResult Function(String? displayUri) setDisplayUri,
+    required TResult Function(WCSessionUpdateResponse sessionUpdate)
+        updateSession,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +32,7 @@ mixin _$WalletConnectProviderEvent {
     TResult Function(Map<String, dynamic> json)? restore,
     TResult Function()? reset,
     TResult Function(String? displayUri)? setDisplayUri,
+    TResult Function(WCSessionUpdateResponse sessionUpdate)? updateSession,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +41,7 @@ mixin _$WalletConnectProviderEvent {
     TResult Function(Map<String, dynamic> json)? restore,
     TResult Function()? reset,
     TResult Function(String? displayUri)? setDisplayUri,
+    TResult Function(WCSessionUpdateResponse sessionUpdate)? updateSession,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -48,6 +52,8 @@ mixin _$WalletConnectProviderEvent {
     required TResult Function(WalletConnectProviderResetEvent value) reset,
     required TResult Function(WalletConnectProviderSetDisplayUriEvent value)
         setDisplayUri,
+    required TResult Function(WalletConnectProviderUpdateSessionEvent value)
+        updateSession,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +63,8 @@ mixin _$WalletConnectProviderEvent {
     TResult Function(WalletConnectProviderResetEvent value)? reset,
     TResult Function(WalletConnectProviderSetDisplayUriEvent value)?
         setDisplayUri,
+    TResult Function(WalletConnectProviderUpdateSessionEvent value)?
+        updateSession,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,6 +74,8 @@ mixin _$WalletConnectProviderEvent {
     TResult Function(WalletConnectProviderResetEvent value)? reset,
     TResult Function(WalletConnectProviderSetDisplayUriEvent value)?
         setDisplayUri,
+    TResult Function(WalletConnectProviderUpdateSessionEvent value)?
+        updateSession,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -138,6 +148,8 @@ class _$WalletConnectProviderConnectEvent
     required TResult Function(Map<String, dynamic> json) restore,
     required TResult Function() reset,
     required TResult Function(String? displayUri) setDisplayUri,
+    required TResult Function(WCSessionUpdateResponse sessionUpdate)
+        updateSession,
   }) {
     return connect();
   }
@@ -149,6 +161,7 @@ class _$WalletConnectProviderConnectEvent
     TResult Function(Map<String, dynamic> json)? restore,
     TResult Function()? reset,
     TResult Function(String? displayUri)? setDisplayUri,
+    TResult Function(WCSessionUpdateResponse sessionUpdate)? updateSession,
   }) {
     return connect?.call();
   }
@@ -160,6 +173,7 @@ class _$WalletConnectProviderConnectEvent
     TResult Function(Map<String, dynamic> json)? restore,
     TResult Function()? reset,
     TResult Function(String? displayUri)? setDisplayUri,
+    TResult Function(WCSessionUpdateResponse sessionUpdate)? updateSession,
     required TResult orElse(),
   }) {
     if (connect != null) {
@@ -176,6 +190,8 @@ class _$WalletConnectProviderConnectEvent
     required TResult Function(WalletConnectProviderResetEvent value) reset,
     required TResult Function(WalletConnectProviderSetDisplayUriEvent value)
         setDisplayUri,
+    required TResult Function(WalletConnectProviderUpdateSessionEvent value)
+        updateSession,
   }) {
     return connect(this);
   }
@@ -188,6 +204,8 @@ class _$WalletConnectProviderConnectEvent
     TResult Function(WalletConnectProviderResetEvent value)? reset,
     TResult Function(WalletConnectProviderSetDisplayUriEvent value)?
         setDisplayUri,
+    TResult Function(WalletConnectProviderUpdateSessionEvent value)?
+        updateSession,
   }) {
     return connect?.call(this);
   }
@@ -200,6 +218,8 @@ class _$WalletConnectProviderConnectEvent
     TResult Function(WalletConnectProviderResetEvent value)? reset,
     TResult Function(WalletConnectProviderSetDisplayUriEvent value)?
         setDisplayUri,
+    TResult Function(WalletConnectProviderUpdateSessionEvent value)?
+        updateSession,
     required TResult orElse(),
   }) {
     if (connect != null) {
@@ -295,6 +315,8 @@ class _$WalletConnectProviderRestoreEvent
     required TResult Function(Map<String, dynamic> json) restore,
     required TResult Function() reset,
     required TResult Function(String? displayUri) setDisplayUri,
+    required TResult Function(WCSessionUpdateResponse sessionUpdate)
+        updateSession,
   }) {
     return restore(json);
   }
@@ -306,6 +328,7 @@ class _$WalletConnectProviderRestoreEvent
     TResult Function(Map<String, dynamic> json)? restore,
     TResult Function()? reset,
     TResult Function(String? displayUri)? setDisplayUri,
+    TResult Function(WCSessionUpdateResponse sessionUpdate)? updateSession,
   }) {
     return restore?.call(json);
   }
@@ -317,6 +340,7 @@ class _$WalletConnectProviderRestoreEvent
     TResult Function(Map<String, dynamic> json)? restore,
     TResult Function()? reset,
     TResult Function(String? displayUri)? setDisplayUri,
+    TResult Function(WCSessionUpdateResponse sessionUpdate)? updateSession,
     required TResult orElse(),
   }) {
     if (restore != null) {
@@ -333,6 +357,8 @@ class _$WalletConnectProviderRestoreEvent
     required TResult Function(WalletConnectProviderResetEvent value) reset,
     required TResult Function(WalletConnectProviderSetDisplayUriEvent value)
         setDisplayUri,
+    required TResult Function(WalletConnectProviderUpdateSessionEvent value)
+        updateSession,
   }) {
     return restore(this);
   }
@@ -345,6 +371,8 @@ class _$WalletConnectProviderRestoreEvent
     TResult Function(WalletConnectProviderResetEvent value)? reset,
     TResult Function(WalletConnectProviderSetDisplayUriEvent value)?
         setDisplayUri,
+    TResult Function(WalletConnectProviderUpdateSessionEvent value)?
+        updateSession,
   }) {
     return restore?.call(this);
   }
@@ -357,6 +385,8 @@ class _$WalletConnectProviderRestoreEvent
     TResult Function(WalletConnectProviderResetEvent value)? reset,
     TResult Function(WalletConnectProviderSetDisplayUriEvent value)?
         setDisplayUri,
+    TResult Function(WalletConnectProviderUpdateSessionEvent value)?
+        updateSession,
     required TResult orElse(),
   }) {
     if (restore != null) {
@@ -428,6 +458,8 @@ class _$WalletConnectProviderResetEvent
     required TResult Function(Map<String, dynamic> json) restore,
     required TResult Function() reset,
     required TResult Function(String? displayUri) setDisplayUri,
+    required TResult Function(WCSessionUpdateResponse sessionUpdate)
+        updateSession,
   }) {
     return reset();
   }
@@ -439,6 +471,7 @@ class _$WalletConnectProviderResetEvent
     TResult Function(Map<String, dynamic> json)? restore,
     TResult Function()? reset,
     TResult Function(String? displayUri)? setDisplayUri,
+    TResult Function(WCSessionUpdateResponse sessionUpdate)? updateSession,
   }) {
     return reset?.call();
   }
@@ -450,6 +483,7 @@ class _$WalletConnectProviderResetEvent
     TResult Function(Map<String, dynamic> json)? restore,
     TResult Function()? reset,
     TResult Function(String? displayUri)? setDisplayUri,
+    TResult Function(WCSessionUpdateResponse sessionUpdate)? updateSession,
     required TResult orElse(),
   }) {
     if (reset != null) {
@@ -466,6 +500,8 @@ class _$WalletConnectProviderResetEvent
     required TResult Function(WalletConnectProviderResetEvent value) reset,
     required TResult Function(WalletConnectProviderSetDisplayUriEvent value)
         setDisplayUri,
+    required TResult Function(WalletConnectProviderUpdateSessionEvent value)
+        updateSession,
   }) {
     return reset(this);
   }
@@ -478,6 +514,8 @@ class _$WalletConnectProviderResetEvent
     TResult Function(WalletConnectProviderResetEvent value)? reset,
     TResult Function(WalletConnectProviderSetDisplayUriEvent value)?
         setDisplayUri,
+    TResult Function(WalletConnectProviderUpdateSessionEvent value)?
+        updateSession,
   }) {
     return reset?.call(this);
   }
@@ -490,6 +528,8 @@ class _$WalletConnectProviderResetEvent
     TResult Function(WalletConnectProviderResetEvent value)? reset,
     TResult Function(WalletConnectProviderSetDisplayUriEvent value)?
         setDisplayUri,
+    TResult Function(WalletConnectProviderUpdateSessionEvent value)?
+        updateSession,
     required TResult orElse(),
   }) {
     if (reset != null) {
@@ -581,6 +621,8 @@ class _$WalletConnectProviderSetDisplayUriEvent
     required TResult Function(Map<String, dynamic> json) restore,
     required TResult Function() reset,
     required TResult Function(String? displayUri) setDisplayUri,
+    required TResult Function(WCSessionUpdateResponse sessionUpdate)
+        updateSession,
   }) {
     return setDisplayUri(displayUri);
   }
@@ -592,6 +634,7 @@ class _$WalletConnectProviderSetDisplayUriEvent
     TResult Function(Map<String, dynamic> json)? restore,
     TResult Function()? reset,
     TResult Function(String? displayUri)? setDisplayUri,
+    TResult Function(WCSessionUpdateResponse sessionUpdate)? updateSession,
   }) {
     return setDisplayUri?.call(displayUri);
   }
@@ -603,6 +646,7 @@ class _$WalletConnectProviderSetDisplayUriEvent
     TResult Function(Map<String, dynamic> json)? restore,
     TResult Function()? reset,
     TResult Function(String? displayUri)? setDisplayUri,
+    TResult Function(WCSessionUpdateResponse sessionUpdate)? updateSession,
     required TResult orElse(),
   }) {
     if (setDisplayUri != null) {
@@ -619,6 +663,8 @@ class _$WalletConnectProviderSetDisplayUriEvent
     required TResult Function(WalletConnectProviderResetEvent value) reset,
     required TResult Function(WalletConnectProviderSetDisplayUriEvent value)
         setDisplayUri,
+    required TResult Function(WalletConnectProviderUpdateSessionEvent value)
+        updateSession,
   }) {
     return setDisplayUri(this);
   }
@@ -631,6 +677,8 @@ class _$WalletConnectProviderSetDisplayUriEvent
     TResult Function(WalletConnectProviderResetEvent value)? reset,
     TResult Function(WalletConnectProviderSetDisplayUriEvent value)?
         setDisplayUri,
+    TResult Function(WalletConnectProviderUpdateSessionEvent value)?
+        updateSession,
   }) {
     return setDisplayUri?.call(this);
   }
@@ -643,6 +691,8 @@ class _$WalletConnectProviderSetDisplayUriEvent
     TResult Function(WalletConnectProviderResetEvent value)? reset,
     TResult Function(WalletConnectProviderSetDisplayUriEvent value)?
         setDisplayUri,
+    TResult Function(WalletConnectProviderUpdateSessionEvent value)?
+        updateSession,
     required TResult orElse(),
   }) {
     if (setDisplayUri != null) {
@@ -665,12 +715,185 @@ abstract class WalletConnectProviderSetDisplayUriEvent
 }
 
 /// @nodoc
+abstract class _$$WalletConnectProviderUpdateSessionEventCopyWith<$Res> {
+  factory _$$WalletConnectProviderUpdateSessionEventCopyWith(
+          _$WalletConnectProviderUpdateSessionEvent value,
+          $Res Function(_$WalletConnectProviderUpdateSessionEvent) then) =
+      __$$WalletConnectProviderUpdateSessionEventCopyWithImpl<$Res>;
+  $Res call({WCSessionUpdateResponse sessionUpdate});
+}
+
+/// @nodoc
+class __$$WalletConnectProviderUpdateSessionEventCopyWithImpl<$Res>
+    extends _$WalletConnectProviderEventCopyWithImpl<$Res>
+    implements _$$WalletConnectProviderUpdateSessionEventCopyWith<$Res> {
+  __$$WalletConnectProviderUpdateSessionEventCopyWithImpl(
+      _$WalletConnectProviderUpdateSessionEvent _value,
+      $Res Function(_$WalletConnectProviderUpdateSessionEvent) _then)
+      : super(_value,
+            (v) => _then(v as _$WalletConnectProviderUpdateSessionEvent));
+
+  @override
+  _$WalletConnectProviderUpdateSessionEvent get _value =>
+      super._value as _$WalletConnectProviderUpdateSessionEvent;
+
+  @override
+  $Res call({
+    Object? sessionUpdate = freezed,
+  }) {
+    return _then(_$WalletConnectProviderUpdateSessionEvent(
+      sessionUpdate == freezed
+          ? _value.sessionUpdate
+          : sessionUpdate // ignore: cast_nullable_to_non_nullable
+              as WCSessionUpdateResponse,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$WalletConnectProviderUpdateSessionEvent
+    implements WalletConnectProviderUpdateSessionEvent {
+  _$WalletConnectProviderUpdateSessionEvent(this.sessionUpdate);
+
+  @override
+  final WCSessionUpdateResponse sessionUpdate;
+
+  @override
+  String toString() {
+    return 'WalletConnectProviderEvent.updateSession(sessionUpdate: $sessionUpdate)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$WalletConnectProviderUpdateSessionEvent &&
+            const DeepCollectionEquality()
+                .equals(other.sessionUpdate, sessionUpdate));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(sessionUpdate));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$WalletConnectProviderUpdateSessionEventCopyWith<
+          _$WalletConnectProviderUpdateSessionEvent>
+      get copyWith => __$$WalletConnectProviderUpdateSessionEventCopyWithImpl<
+          _$WalletConnectProviderUpdateSessionEvent>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() connect,
+    required TResult Function(Map<String, dynamic> json) restore,
+    required TResult Function() reset,
+    required TResult Function(String? displayUri) setDisplayUri,
+    required TResult Function(WCSessionUpdateResponse sessionUpdate)
+        updateSession,
+  }) {
+    return updateSession(sessionUpdate);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? connect,
+    TResult Function(Map<String, dynamic> json)? restore,
+    TResult Function()? reset,
+    TResult Function(String? displayUri)? setDisplayUri,
+    TResult Function(WCSessionUpdateResponse sessionUpdate)? updateSession,
+  }) {
+    return updateSession?.call(sessionUpdate);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? connect,
+    TResult Function(Map<String, dynamic> json)? restore,
+    TResult Function()? reset,
+    TResult Function(String? displayUri)? setDisplayUri,
+    TResult Function(WCSessionUpdateResponse sessionUpdate)? updateSession,
+    required TResult orElse(),
+  }) {
+    if (updateSession != null) {
+      return updateSession(sessionUpdate);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(WalletConnectProviderConnectEvent value) connect,
+    required TResult Function(WalletConnectProviderRestoreEvent value) restore,
+    required TResult Function(WalletConnectProviderResetEvent value) reset,
+    required TResult Function(WalletConnectProviderSetDisplayUriEvent value)
+        setDisplayUri,
+    required TResult Function(WalletConnectProviderUpdateSessionEvent value)
+        updateSession,
+  }) {
+    return updateSession(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(WalletConnectProviderConnectEvent value)? connect,
+    TResult Function(WalletConnectProviderRestoreEvent value)? restore,
+    TResult Function(WalletConnectProviderResetEvent value)? reset,
+    TResult Function(WalletConnectProviderSetDisplayUriEvent value)?
+        setDisplayUri,
+    TResult Function(WalletConnectProviderUpdateSessionEvent value)?
+        updateSession,
+  }) {
+    return updateSession?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(WalletConnectProviderConnectEvent value)? connect,
+    TResult Function(WalletConnectProviderRestoreEvent value)? restore,
+    TResult Function(WalletConnectProviderResetEvent value)? reset,
+    TResult Function(WalletConnectProviderSetDisplayUriEvent value)?
+        setDisplayUri,
+    TResult Function(WalletConnectProviderUpdateSessionEvent value)?
+        updateSession,
+    required TResult orElse(),
+  }) {
+    if (updateSession != null) {
+      return updateSession(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class WalletConnectProviderUpdateSessionEvent
+    implements WalletConnectProviderEvent {
+  factory WalletConnectProviderUpdateSessionEvent(
+          final WCSessionUpdateResponse sessionUpdate) =
+      _$WalletConnectProviderUpdateSessionEvent;
+
+  WCSessionUpdateResponse get sessionUpdate;
+  @JsonKey(ignore: true)
+  _$$WalletConnectProviderUpdateSessionEventCopyWith<
+          _$WalletConnectProviderUpdateSessionEvent>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$WalletConnectProviderState {
   dynamic get isConnected => throw _privateConstructorUsedError;
   RpcService? get rpcService => throw _privateConstructorUsedError;
   CredentialsWithKnownAddress? get credentials =>
       throw _privateConstructorUsedError;
   String? get displayUri => throw _privateConstructorUsedError;
+  WCSessionUpdateResponse? get sessionUpdate =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $WalletConnectProviderStateCopyWith<WalletConnectProviderState>
@@ -686,7 +909,8 @@ abstract class $WalletConnectProviderStateCopyWith<$Res> {
       {dynamic isConnected,
       RpcService? rpcService,
       CredentialsWithKnownAddress? credentials,
-      String? displayUri});
+      String? displayUri,
+      WCSessionUpdateResponse? sessionUpdate});
 }
 
 /// @nodoc
@@ -704,6 +928,7 @@ class _$WalletConnectProviderStateCopyWithImpl<$Res>
     Object? rpcService = freezed,
     Object? credentials = freezed,
     Object? displayUri = freezed,
+    Object? sessionUpdate = freezed,
   }) {
     return _then(_value.copyWith(
       isConnected: isConnected == freezed
@@ -722,6 +947,10 @@ class _$WalletConnectProviderStateCopyWithImpl<$Res>
           ? _value.displayUri
           : displayUri // ignore: cast_nullable_to_non_nullable
               as String?,
+      sessionUpdate: sessionUpdate == freezed
+          ? _value.sessionUpdate
+          : sessionUpdate // ignore: cast_nullable_to_non_nullable
+              as WCSessionUpdateResponse?,
     ));
   }
 }
@@ -738,7 +967,8 @@ abstract class _$$_WalletConnectProviderStateCopyWith<$Res>
       {dynamic isConnected,
       RpcService? rpcService,
       CredentialsWithKnownAddress? credentials,
-      String? displayUri});
+      String? displayUri,
+      WCSessionUpdateResponse? sessionUpdate});
 }
 
 /// @nodoc
@@ -760,6 +990,7 @@ class __$$_WalletConnectProviderStateCopyWithImpl<$Res>
     Object? rpcService = freezed,
     Object? credentials = freezed,
     Object? displayUri = freezed,
+    Object? sessionUpdate = freezed,
   }) {
     return _then(_$_WalletConnectProviderState(
       isConnected: isConnected == freezed ? _value.isConnected : isConnected,
@@ -775,6 +1006,10 @@ class __$$_WalletConnectProviderStateCopyWithImpl<$Res>
           ? _value.displayUri
           : displayUri // ignore: cast_nullable_to_non_nullable
               as String?,
+      sessionUpdate: sessionUpdate == freezed
+          ? _value.sessionUpdate
+          : sessionUpdate // ignore: cast_nullable_to_non_nullable
+              as WCSessionUpdateResponse?,
     ));
   }
 }
@@ -786,7 +1021,8 @@ class _$_WalletConnectProviderState implements _WalletConnectProviderState {
       {this.isConnected = false,
       this.rpcService,
       this.credentials,
-      this.displayUri});
+      this.displayUri,
+      this.sessionUpdate});
 
   @override
   @JsonKey()
@@ -797,10 +1033,12 @@ class _$_WalletConnectProviderState implements _WalletConnectProviderState {
   final CredentialsWithKnownAddress? credentials;
   @override
   final String? displayUri;
+  @override
+  final WCSessionUpdateResponse? sessionUpdate;
 
   @override
   String toString() {
-    return 'WalletConnectProviderState(isConnected: $isConnected, rpcService: $rpcService, credentials: $credentials, displayUri: $displayUri)';
+    return 'WalletConnectProviderState(isConnected: $isConnected, rpcService: $rpcService, credentials: $credentials, displayUri: $displayUri, sessionUpdate: $sessionUpdate)';
   }
 
   @override
@@ -815,7 +1053,9 @@ class _$_WalletConnectProviderState implements _WalletConnectProviderState {
             const DeepCollectionEquality()
                 .equals(other.credentials, credentials) &&
             const DeepCollectionEquality()
-                .equals(other.displayUri, displayUri));
+                .equals(other.displayUri, displayUri) &&
+            const DeepCollectionEquality()
+                .equals(other.sessionUpdate, sessionUpdate));
   }
 
   @override
@@ -824,7 +1064,8 @@ class _$_WalletConnectProviderState implements _WalletConnectProviderState {
       const DeepCollectionEquality().hash(isConnected),
       const DeepCollectionEquality().hash(rpcService),
       const DeepCollectionEquality().hash(credentials),
-      const DeepCollectionEquality().hash(displayUri));
+      const DeepCollectionEquality().hash(displayUri),
+      const DeepCollectionEquality().hash(sessionUpdate));
 
   @JsonKey(ignore: true)
   @override
@@ -836,10 +1077,12 @@ class _$_WalletConnectProviderState implements _WalletConnectProviderState {
 abstract class _WalletConnectProviderState
     implements WalletConnectProviderState {
   factory _WalletConnectProviderState(
-      {final dynamic isConnected,
-      final RpcService? rpcService,
-      final CredentialsWithKnownAddress? credentials,
-      final String? displayUri}) = _$_WalletConnectProviderState;
+          {final dynamic isConnected,
+          final RpcService? rpcService,
+          final CredentialsWithKnownAddress? credentials,
+          final String? displayUri,
+          final WCSessionUpdateResponse? sessionUpdate}) =
+      _$_WalletConnectProviderState;
 
   @override
   dynamic get isConnected;
@@ -849,6 +1092,8 @@ abstract class _WalletConnectProviderState
   CredentialsWithKnownAddress? get credentials;
   @override
   String? get displayUri;
+  @override
+  WCSessionUpdateResponse? get sessionUpdate;
   @override
   @JsonKey(ignore: true)
   _$$_WalletConnectProviderStateCopyWith<_$_WalletConnectProviderState>

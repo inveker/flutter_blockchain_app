@@ -12,7 +12,7 @@ class ChainModel with _$ChainModel {
     required String rpcUrl,
     required String nativeCurrencySymbol,
     required int nativeCurrencyDecimals,
-    required String blockExplorerUrls,
+    String? blockExplorerUrl,
     String? image,
   }) = _ChainModel;
 

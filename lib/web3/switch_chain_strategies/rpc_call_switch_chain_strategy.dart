@@ -3,13 +3,15 @@ import 'package:flutter_blockchain_app/web3/switch_chain_strategies/switch_chain
 import 'package:web3dart/json_rpc.dart';
 
 class RpcCallSwitchChainStrategy implements SwitchChainStrategy {
-  static const int chainNotExistsErrorCode = 4902;
-
   final RpcService rpcService;
 
   RpcCallSwitchChainStrategy({
     required this.rpcService,
   });
+
+  bool _isChainNotExistsException(RPCError e) {
+    return e.message.contains('wallet_addEthereumChain');
+  }
 
   @override
   Future<bool> execute(ChainModel chain) async {
@@ -21,23 +23,20 @@ class RpcCallSwitchChainStrategy implements SwitchChainStrategy {
       ]);
       return response.result == null;
     } on RPCError catch (e) {
-      try {
-        final response = await rpcService.call('wallet_addEthereumChain', [
-          {
-            'chainId': chain.getHexId(),
-            'chainName': chain.name,
-            'rpcUrls': [chain.rpcUrl],
-            'nativeCurrency': {
-              'symbol': chain.nativeCurrencySymbol,
-              'decimals': 18
-            },
-            'blockExplorerUrls': [chain.blockExplorerUrls],
-          }
-        ]);
-        return response.result == null;
-      } catch(e) {
-        rethrow;
-      }
+      if(!_isChainNotExistsException(e)) rethrow;
+      final response = await rpcService.call('wallet_addEthereumChain', [
+        {
+          'chainId': chain.getHexId(),
+          'chainName': chain.name,
+          'rpcUrls': [chain.rpcUrl],
+          'nativeCurrency': {
+            'symbol': chain.nativeCurrencySymbol,
+            'decimals': chain.nativeCurrencyDecimals
+          },
+          if(chain.blockExplorerUrl != null) 'blockExplorerUrls': [chain.blockExplorerUrl],
+        }
+      ]);
+      return response.result == null;
     }
   }
 }

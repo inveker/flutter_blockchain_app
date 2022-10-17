@@ -7,5 +7,6 @@ class WalletConnectProviderState with _$WalletConnectProviderState {
     RpcService? rpcService,
     CredentialsWithKnownAddress? credentials,
     String? displayUri,
+    WCSessionUpdateResponse? sessionUpdate,
   }) = _WalletConnectProviderState;
 }

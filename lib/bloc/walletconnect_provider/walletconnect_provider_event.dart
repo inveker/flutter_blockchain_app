@@ -9,4 +9,6 @@ class WalletConnectProviderEvent with _$WalletConnectProviderEvent {
   factory WalletConnectProviderEvent.reset() = WalletConnectProviderResetEvent;
 
   factory WalletConnectProviderEvent.setDisplayUri(String? displayUri) = WalletConnectProviderSetDisplayUriEvent;
+
+  factory WalletConnectProviderEvent.updateSession(WCSessionUpdateResponse sessionUpdate) = WalletConnectProviderUpdateSessionEvent;
 }
