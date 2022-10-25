@@ -44,21 +44,11 @@ dependencies:
   path_provider:
   auto_route:
   web3dart:
-  web3_browser:
-  web3_ethereum:
-    path: ../web3_ethereum
-  web3dart_ethereum:
-    path:
-      ../web3dart_ethereum
-  web3dart_walletconnect:
-    path:
-      ../web3dart_walletconnect
-  walletconnect_dart:
-    git:
-      url: https://github.com/RootSoft/walletconnect-dart-sdk.git
-      ref: feature/string-chainid
   qr_flutter:
   url_launcher:
+  web3_context:
+    path:
+      ../web3_context
 
 
 dev_dependencies:

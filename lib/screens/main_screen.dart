@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_blockchain_app/bloc/rpc/rpc_bloc.dart';
-import 'package:flutter_blockchain_app/bloc/wallet_connection/wallet_connection_bloc.dart';
 import 'package:flutter_blockchain_app/widgets/chain_selector.dart';
 import 'package:flutter_blockchain_app/widgets/wallet_connect_button.dart';
 import 'package:flutter_blockchain_app/widgets/wallet_logout_button.dart';
+import 'package:web3_context/bloc/rpc/rpc_bloc.dart';
+import 'package:web3_context/bloc/wallet_connection/wallet_connection_bloc.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});

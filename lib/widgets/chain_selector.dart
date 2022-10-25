@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_blockchain_app/bloc/chain/chain_bloc.dart';
-import 'package:flutter_blockchain_app/models/chain/chain_model.dart';
+import 'package:web3_context/bloc/chain/chain_bloc.dart';
+import 'package:web3_context/models/chain/chain_model.dart';
 
 class ChainSelector extends StatelessWidget {
   const ChainSelector({Key? key}) : super(key: key);

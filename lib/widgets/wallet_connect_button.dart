@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_blockchain_app/bloc/browser_extension_provider/browser_extension_provider_bloc.dart';
-import 'package:flutter_blockchain_app/bloc/walletconnect_provider/walletconnect_provider_bloc.dart';
 import 'package:qr_flutter/qr_flutter.dart';
+import 'package:web3_context/bloc/browser_extension_provider/browser_extension_provider_bloc.dart';
+import 'package:web3_context/bloc/walletconnect_provider/walletconnect_provider_bloc.dart';
 
 class WalletConnectButton extends StatelessWidget {
   const WalletConnectButton({Key? key}) : super(key: key);

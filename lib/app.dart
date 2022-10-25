@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blockchain_app/models/chain/chain_model.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_blockchain_app/router/app_router.dart';
-import 'package:flutter_blockchain_app/web3/web3_context_bloc/web3_context_bloc.dart';
+import 'package:web3_context/models/chain/chain_model.dart';
+import 'package:web3_context/web3_context.dart';
 
 class App extends StatefulWidget {
   const App({Key? key}) : super(key: key);
@@ -21,7 +22,9 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
-    return Web3ContextBloc(
+    final appContext = _appRouter.navigatorKey.currentState?.context ?? context;
+    return Web3Context(
+      appContext: appContext,
       chains: [
         ChainModel(
           id: 1,
@@ -40,6 +43,13 @@ class _AppState extends State<App> {
           blockExplorerUrl: 'https://polygonscan.com/',
         ),
       ],
+      updateDialog: Material(
+        child: Center(
+          child: Container(
+            child: Text('UPDATED'),
+          ),
+        ),
+      ),
       child: MaterialApp.router(
         routerDelegate: _appRouter.delegate(),
         routeInformationParser: _appRouter.defaultRouteParser(),

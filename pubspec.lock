@@ -715,7 +715,7 @@ packages:
     source: hosted
     version: "2.1.2"
   walletconnect_dart:
-    dependency: "direct main"
+    dependency: transitive
     description:
       path: "."
       ref: "feature/string-chainid"
@@ -730,15 +730,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.1"
-  web3_browser:
+  web3_context:
     dependency: "direct main"
     description:
-      name: web3_browser
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.0.1"
+      path: "../web3_context"
+      relative: true
+    source: path
+    version: "1.0.0+1"
   web3_ethereum:
-    dependency: "direct main"
+    dependency: transitive
     description:
       path: "../web3_ethereum"
       relative: true
@@ -759,14 +759,14 @@ packages:
     source: hosted
     version: "0.0.2"
   web3dart_ethereum:
-    dependency: "direct main"
+    dependency: transitive
     description:
       path: "../web3dart_ethereum"
       relative: true
     source: path
     version: "0.0.1"
   web3dart_walletconnect:
-    dependency: "direct main"
+    dependency: transitive
     description:
       path: "../web3dart_walletconnect"
       relative: true
